@@ -1,0 +1,1583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>CPD</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            <ul class="list-group">
+                
+                <li class="list-group-item">Grouping</li>
+                
+                <li class="list-group-item">SDM Proxy</li>
+                
+            </ul>
+        </div>
+        <div class="col-sm">
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Interest Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : WORD Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Summary Report</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">POST : Create Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">PUT : Save Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get A Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Edit Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Preview Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get Class Group Sets</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">DELETE : Delete Group Set</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get classes</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get students</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/students</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get Teacher Entitlements</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">GET : Get Class Entitlements</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</h6>
+                <p class="card-text">None</p>
+              </div>
+            </div>
+            
+        </div>
+        <div class="col-sm">
+          
+                
+            
+                
+            
+                
+            
+                
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">POST : Create Group Set - Algo Selected</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2</h6>
+                        <p class="card-text">{
+	"name": "",
+    "groupType": "LEXILE",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": "SKILL"
+}</p>
+                        <p class="card-text">{
+    "id": 50,
+    "name": "",
+    "groupType": "LEXILE",
+    "classId": 84057,
+    "draft": true,
+    "newDataIsAvailable": false,
+    "tieBreaker": "SKILL",
+    "levelingType": "LEXILE",
+    "createdBy": "216569",
+    "createdOn": "2020-03-18T14:53:22.480409Z",
+    "updatedBy": null,
+    "updatedOn": null,
+    "groups": [
+        {
+            "id": 61,
+            "name": "Student Roster",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524445Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [
+                "216640",
+                "220116",
+                "216639",
+                "216638",
+                "216646",
+                "216645",
+                "216637",
+                "216648",
+                "216636",
+                "216647",
+                "216642",
+                "216641",
+                "216644",
+                "216930",
+                "216963",
+                "216643"
+            ],
+            "interests": [],
+            "skills": [],
+            "roster": true,
+            "changed": false
+        },
+        {
+            "id": 62,
+            "name": "Group 2",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524436Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        },
+        {
+            "id": 63,
+            "name": "Group 1",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524442Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        }
+    ],
+    "studentIds": [
+        "216643",
+        "216644",
+        "216930",
+        "216963",
+        "216641",
+        "216642",
+        "216640",
+        "220116",
+        "216638",
+        "216639",
+        "216636",
+        "216647",
+        "216637",
+        "216648",
+        "216645",
+        "216646"
+    ],
+    "groupStudents": [
+        {
+            "studentId": "216648",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216639",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216643",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "220116",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": [
+                {
+                    "skillShortName": "antonyms",
+                    "skillName": "Antonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                },
+                {
+                    "skillShortName": "synonyms",
+                    "skillName": "Synonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                }
+            ]
+        },
+        {
+            "studentId": "216638",
+            "readingLevel": "111",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2019-12-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216930",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216644",
+            "readingLevel": "111",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-30T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216642",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216641",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [
+                {
+                    "interestShortName": "biographies_and_autobiographies",
+                    "interestName": "Biographies & Autobiographies"
+                },
+                {
+                    "interestShortName": "science_and_technology",
+                    "interestName": "Science & Technology"
+                },
+                {
+                    "interestShortName": "nature_and_the_environment",
+                    "interestName": "Nature & the Environment"
+                },
+                {
+                    "interestShortName": "animals_and_pets",
+                    "interestName": "Animals & Pets"
+                }
+            ],
+            "skills": []
+        },
+        {
+            "studentId": "216645",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216636",
+            "readingLevel": "250",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-30T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216963",
+            "readingLevel": "110",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216637",
+            "readingLevel": "300",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2019-11-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216640",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216646",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216647",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        }
+    ]
+}</p>
+                      </div>
+                    </div>
+                
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">POST : Create Group Set - Teacher Selected</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2</h6>
+                        <p class="card-text">{
+	"name": "",
+    "groupType": "TEACHER_SELECTED",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": null,
+    "groups": [
+    	{
+    		"name": "Group 1"
+    	},
+    	{
+    		"name": "Group 2"
+    	}
+    ]
+}</p>
+                        <p class="card-text">{
+    "id": 52,
+    "name": "",
+    "groupType": "TEACHER_SELECTED",
+    "classId": 84057,
+    "draft": true,
+    "newDataIsAvailable": false,
+    "tieBreaker": null,
+    "levelingType": "GRL",
+    "createdBy": "216569",
+    "createdOn": "2020-03-18T14:55:25.800383Z",
+    "updatedBy": null,
+    "updatedOn": null,
+    "groups": [
+        {
+            "id": 65,
+            "name": "Group 2",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858580Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        },
+        {
+            "id": 66,
+            "name": "Student Roster",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858588Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [
+                "216646",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216638",
+                "216642",
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216645",
+                "220116",
+                "216640",
+                "216641",
+                "216639"
+            ],
+            "interests": [],
+            "skills": [],
+            "roster": true,
+            "changed": false
+        },
+        {
+            "id": 67,
+            "name": "Group 1",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858586Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        }
+    ],
+    "studentIds": [
+        "216643",
+        "216644",
+        "216930",
+        "216963",
+        "216641",
+        "216642",
+        "216640",
+        "220116",
+        "216638",
+        "216639",
+        "216636",
+        "216647",
+        "216637",
+        "216648",
+        "216645",
+        "216646"
+    ],
+    "groupStudents": [
+        {
+            "studentId": "216643",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216639",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-08T18:20:14Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216638",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2019-12-04T20:50:20Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216930",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216963",
+            "readingLevel": "J",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216645",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216647",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216648",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216636",
+            "readingLevel": "E",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-02-21T16:34:15Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216641",
+            "readingLevel": "M",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-02-21T16:35:16Z",
+            "interests": [
+                {
+                    "interestShortName": "biographies_and_autobiographies",
+                    "interestName": "Biographies & Autobiographies"
+                },
+                {
+                    "interestShortName": "science_and_technology",
+                    "interestName": "Science & Technology"
+                },
+                {
+                    "interestShortName": "nature_and_the_environment",
+                    "interestName": "Nature & the Environment"
+                },
+                {
+                    "interestShortName": "animals_and_pets",
+                    "interestName": "Animals & Pets"
+                }
+            ],
+            "skills": []
+        },
+        {
+            "studentId": "216640",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2019-12-04T20:50:39Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216637",
+            "readingLevel": "A",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-07T20:24:31Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216644",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-29T19:58:36Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "220116",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": [
+                {
+                    "skillShortName": "antonyms",
+                    "skillName": "Antonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                },
+                {
+                    "skillShortName": "synonyms",
+                    "skillName": "Synonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                }
+            ]
+        },
+        {
+            "studentId": "216642",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216646",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-07T20:24:18Z",
+            "interests": [],
+            "skills": []
+        }
+    ]
+}</p>
+                      </div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">GET : Get Class Group Sets - GRL + Interest</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets</h6>
+                        <p class="card-text"></p>
+                        <p class="card-text">{
+    "results": [
+        {
+            "id": 173,
+            "name": "Karthik's Group Set 1",
+            "groupType": "GRL",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": "INTEREST",
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-25T19:48:50Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-25T19:48:53Z",
+            "groups": [
+                {
+                    "id": 369,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [
+                        "216641",
+                        "216642",
+                        "220116",
+                        "216640",
+                        "216636",
+                        "216647",
+                        "216637",
+                        "216648"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": null
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": null,
+                                "skill_c": null
+                            },
+                            "resources": {
+                                "category": null,
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": null
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 370,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                },
+                {
+                    "id": 368,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [
+                        "216646",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216645",
+                        "216643",
+                        "216639",
+                        "216638"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": null
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": null,
+                                "skill_c": null
+                            },
+                            "resources": {
+                                "category": null,
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": null
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</p>
+                      </div>
+                    </div>
+                
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">GET : Get Class Group Sets - Teacher Selected</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets</h6>
+                        <p class="card-text"></p>
+                        <p class="card-text">{
+    "results": [
+        {
+            "id": 175,
+            "name": "Karthik's Group Set 1",
+            "groupType": "TEACHER_SELECTED",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": null,
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-26T13:47:06Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-26T13:47:10Z",
+            "groups": [
+                {
+                    "id": 372,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [
+                        "216639",
+                        "216638",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216643",
+                        "216646",
+                        "216645"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 374,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [
+                        "216642",
+                        "216641",
+                        "216640",
+                        "220116",
+                        "216637",
+                        "216648",
+                        "216636",
+                        "216647"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 373,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</p>
+                      </div>
+                    </div>
+                
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">GET : Get Class Group Sets - Skill + Interest</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{HOST}}/classes/{{CLASS_ID}}/group-sets</h6>
+                        <p class="card-text"></p>
+                        <p class="card-text">{
+    "results": [
+        {
+            "id": 172,
+            "name": "Karthik's Group Set 1",
+            "groupType": "SKILL",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": "INTEREST",
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-25T15:01:48Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-25T15:01:52Z",
+            "groups": [
+                {
+                    "id": 367,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [
+                        "216636",
+                        "216647",
+                        "216641",
+                        "216640",
+                        "216642",
+                        "220116",
+                        "216637",
+                        "216648"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": null,
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": null,
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 366,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                },
+                {
+                    "id": 365,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [
+                        "216646",
+                        "216645",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216643",
+                        "216639",
+                        "216638"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": null,
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": null,
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</p>
+                      </div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
