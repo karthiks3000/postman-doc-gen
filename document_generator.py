@@ -29,7 +29,7 @@ class DocumentGenerator():
         self.api_collection.description = json_collection['info']['description']
         self.api_collection.schema = json_collection['info']['schema']
 
-        self.side_tree = OrderedDict()
+        self.side_tree = []
         self.add_items(self.side_tree, json_collection)
 
         # print(json.dumps(self.side_tree, indent=4))
@@ -47,10 +47,19 @@ class DocumentGenerator():
     def add_items(self, tree, json_node):
         for item in json_node['item']:
             if item.get('item', None) is not None:
-                tree[item.get('name')] = OrderedDict()
-                self.add_items(tree[item['name']], item)
+                node = {}
+                node['text'] = item.get('name')
+                subnodes = []
+                self.add_items(subnodes, item)
+                node['nodes'] = subnodes
+                node['icon'] = 'fas fa-folder'
+                tree.append(node)
+
             else:
-                tree[item.get('name')] = item.get('request').get('url').get('raw')
+                node = {}
+                node['text'] = item.get('name')
+                node['icon'] = 'fas fa-link'
+                tree.append(node)
                 api = APIModel()
                 api.name = item.get('name')
                 api.description = item.get('description')
@@ -60,7 +69,6 @@ class DocumentGenerator():
                 api.url = item.get('request').get('url').get('raw')
                 api.responses = self.get_responses(item.get('response', []))
                 self.api_info.append(api)
-                # print(api.toJSON())
 
     def get_responses(self, json_responses) -> list:
         responses = []

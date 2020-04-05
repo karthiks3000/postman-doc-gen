@@ -8,14 +8,14 @@
     <meta name="description" content="Free bootstrap documentation template">
     <title>CPD</title>
     <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- using local links -->
-    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sidebar-themes.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.css">
+
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
 
 <body>
@@ -38,50 +38,9 @@
                 </div>
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
-                    <ul>
-                         <li class="header-menu"> <span>APIs</span> </li>
-                                <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">Grouping</span> <span class="badge badge-pill badge-primary">8</span> </a>
-                                    <div class="sidebar-submenu">
-                                        <ul>
-                                            
-                                <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">Reports</span> <span class="badge badge-pill badge-primary">3</span> </a>
-                                    <div class="sidebar-submenu">
-                                        <ul>
-                                            
-                                <li><a href="#"> <span class="menu-text">Interest Report</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">WORD Report</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Summary Report</span> </a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            
-                                <li><a href="#"> <span class="menu-text">Create Group Set</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Save Group Set</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Get A Group Set</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Edit Group Set</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Preview Group Set</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Get Class Group Sets</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Delete Group Set</span> </a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            
-                                <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">SDM Proxy</span> <span class="badge badge-pill badge-primary">4</span> </a>
-                                    <div class="sidebar-submenu">
-                                        <ul>
-                                            
-                                <li><a href="#"> <span class="menu-text">Get classes</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Get students</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Get Teacher Entitlements</span> </a></li>
-                                <li><a href="#"> <span class="menu-text">Get Class Entitlements</span> </a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            
-                    </ul>
+
+                    <div id="tree"></div>
+
                 </div>
                 <!-- sidebar-menu  -->
             </div>
@@ -375,13 +334,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/prism.min.js"></script>
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+    <script src="js/bootstrap-treeview.js"></script>
     <script src="js/main.js"></script>
+    <script type="application/javascript">
+        var data = [{'text': 'Grouping', 'nodes': [{'text': 'Reports', 'nodes': [{'text': 'Interest Report', 'icon': 'fas fa-link'}, {'text': 'WORD Report', 'icon': 'fas fa-link'}, {'text': 'Summary Report', 'icon': 'fas fa-link'}], 'icon': 'fas fa-folder'}, {'text': 'Create Group Set', 'icon': 'fas fa-link'}, {'text': 'Save Group Set', 'icon': 'fas fa-link'}, {'text': 'Get A Group Set', 'icon': 'fas fa-link'}, {'text': 'Edit Group Set', 'icon': 'fas fa-link'}, {'text': 'Preview Group Set', 'icon': 'fas fa-link'}, {'text': 'Get Class Group Sets', 'icon': 'fas fa-link'}, {'text': 'Delete Group Set', 'icon': 'fas fa-link'}], 'icon': 'fas fa-folder'}, {'text': 'SDM Proxy', 'nodes': [{'text': 'Get classes', 'icon': 'fas fa-link'}, {'text': 'Get students', 'icon': 'fas fa-link'}, {'text': 'Get Teacher Entitlements', 'icon': 'fas fa-link'}, {'text': 'Get Class Entitlements', 'icon': 'fas fa-link'}], 'icon': 'fas fa-folder'}]
+        console.log(data);
+        $('#tree').treeview({
+            data: data,
+            levels: 10,
+            expandIcon: 'fas fa-caret-right',
+            collapseIcon: 'fas fa-caret-down',
+            showTags: true
+        });
+    </script>
+
 </body>
 
 </html>
