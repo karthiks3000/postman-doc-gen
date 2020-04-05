@@ -41,12 +41,12 @@
                     <ul>
                          <li class="header-menu"> <span>APIs</span> </li>
                                 <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fa fa-shopping-cart"></i> <span class="menu-text">Grouping</span> <span class="badge badge-pill badge-primary">8</span> </a>
+                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">Grouping</span> <span class="badge badge-pill badge-primary">8</span> </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             
                                 <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fa fa-shopping-cart"></i> <span class="menu-text">Reports</span> <span class="badge badge-pill badge-primary">3</span> </a>
+                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">Reports</span> <span class="badge badge-pill badge-primary">3</span> </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             
@@ -69,7 +69,7 @@
                                 </li>
                             
                                 <li class="sidebar-dropdown">
-                                    <a href="#"> <i class="fa fa-shopping-cart"></i> <span class="menu-text">SDM Proxy</span> <span class="badge badge-pill badge-primary">4</span> </a>
+                                    <a href="#"> <i class="fas fa-folder"></i> <span class="menu-text">SDM Proxy</span> <span class="badge badge-pill badge-primary">4</span> </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             
@@ -132,26 +132,217 @@
                         </ol>
                         <!-- Sep -->
                         <hr class="my-5">
-                        <h3 class="font-weight-bold mb-2">
-                            Code example
-                        </h3>
-                        <p>The Prism source, highlighted with Prism (don’t you just love how meta this is?):</p>
-                        <p>The <a href="https://www.w3.org/TR/html5/grouping-content.html#the-pre-element">recommended way to mark up a code block</a> (both for semantics and for Prism) is a <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span></code> element with a <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span></code> element inside, like so:</p>
-                        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- As a link --&gt;</span>
-<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-light bg-light"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
+                            <h3 class="font-weight-bold mb-2">
+                                Interest Report
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
 
-<span class="c">&lt;!-- As a heading --&gt;</span>
-<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-light bg-light"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-brand mb-0 h1"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/nav&gt;</span></code></pre></figure>
-                        <hr class="my-5">
-                        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/nav&gt;</span></code></pre></figure>
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                WORD Report
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Summary Report
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Create Group Set
+                            </h3>
+                            <p class="lead mb-3">POST : {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na">{
+	"name": "",
+    "groupType": "GRL",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": "INTEREST"
+}</span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Save Group Set
+                            </h3>
+                            <p class="lead mb-3">PUT : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na">{
+    "id": {{GROUP_SET_ID}},
+    "name": "Karthik's LEXILE + SKILL",
+    "groupType": {{GROUP_TYPE}},
+    "classId": {{CLASS_ID}},
+    "draft": false,
+    "newDataIsAvailable": false,
+    "tieBreaker": {{TIE_BREAKER}},
+    "levelingType": {{LEVELING_TYPE}},
+    "groups": {{GROUPS}}
+}</span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get A Group Set
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Edit Group Set
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Preview Group Set
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get Class Group Sets
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/group-sets</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Delete Group Set
+                            </h3>
+                            <p class="lead mb-3">DELETE : {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get classes
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get students
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/classes/{{CLASS_ID}}/students</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get Teacher Entitlements
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
+                            <h3 class="font-weight-bold mb-2">
+                                Get Class Entitlements
+                            </h3>
+                            <p class="lead mb-3">GET : {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</p>
+                            <p>None</p>
+                            <figure class="highlight">
+                                <pre>
+                                    <code class="language-html" data-lang="json">
+
+                                        <span class="na"></span>
+                                    </code>
+                                </pre>
+                            </figure>
+                            <hr class="my-5">
                     </article>
                     <aside class="col-md-3 d-none d-md-block border-left">
                         <div class="widget widget-support-forum p-md-3 p-sm-2"> <span class="icon icon-forum"></span>

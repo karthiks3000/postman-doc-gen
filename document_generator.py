@@ -54,7 +54,8 @@ class DocumentGenerator():
                 api = APIModel()
                 api.name = item.get('name')
                 api.description = item.get('description')
-                api.body = item.get('request').get('body')
+                if item.get('request').get('body', None) is not None:
+                    api.body = item.get('request').get('body').get('raw')
                 api.method = item.get('request').get('method')
                 api.url = item.get('request').get('url').get('raw')
                 api.responses = self.get_responses(item.get('response', []))
