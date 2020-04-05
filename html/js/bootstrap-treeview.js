@@ -58,6 +58,8 @@
 		showCheckbox: false,
 		showTags: false,
 		multiSelect: false,
+		showMethod: false,
+
 
 		// Event handlers
 		onNodeChecked: undefined,
@@ -564,6 +566,20 @@
 					);
 			}
 
+			// Add node method
+			if (_this.options.showMethod) {
+
+				var classList = ['method'];
+
+				classList.push(node.method || '');
+
+				treeItem
+					.append($(_this.template.method)
+						.addClass(classList.join(' '))
+						.append(node.method)
+					);
+			}
+
 			// Add check / unchecked icon
 			if (_this.options.showCheckbox) {
 
@@ -692,7 +708,8 @@
 		indent: '<span class="indent"></span>',
 		icon: '<span class="icon"></span>',
 		link: '<a href="#" style="color:inherit;"></a>',
-		badge: '<span class="badge"></span>'
+		badge: '<span class="badge"></span>',
+		method: '<span class="method"></span>'
 	};
 
 	Tree.prototype.css = '.treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:12px;margin-right:10px}.treeview .node-disabled{color:silver;cursor:not-allowed}'

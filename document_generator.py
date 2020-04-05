@@ -9,6 +9,7 @@ class DocumentGenerator():
     side_tree = OrderedDict()
     api_info = []
     api_collection: APICollectionModel
+    api_id_counter: int
 
     def __init__(self):
         super().__init__()
@@ -30,6 +31,7 @@ class DocumentGenerator():
         self.api_collection.schema = json_collection['info']['schema']
 
         self.side_tree = []
+        self.api_id_counter = 0
         self.add_items(self.side_tree, json_collection)
 
         # print(json.dumps(self.side_tree, indent=4))
@@ -53,14 +55,18 @@ class DocumentGenerator():
                 self.add_items(subnodes, item)
                 node['nodes'] = subnodes
                 node['icon'] = 'fas fa-folder'
+                node['selectable'] = 'false'
                 tree.append(node)
 
             else:
+                self.api_id_counter = self.api_id_counter + 1
                 node = {}
                 node['text'] = item.get('name')
-                node['icon'] = 'fas fa-link'
+                node['href'] = '#' + str(self.api_id_counter)
+                node['method'] = item.get('request').get('method')
                 tree.append(node)
                 api = APIModel()
+                api.id = self.api_id_counter
                 api.name = item.get('name')
                 api.description = item.get('description')
                 if item.get('request').get('body', None) is not None:

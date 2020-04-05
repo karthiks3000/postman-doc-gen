@@ -18,6 +18,7 @@ class ResponseModel:
 
 
 class APIModel:
+    id: int
     name: str
     description: str
     method: str

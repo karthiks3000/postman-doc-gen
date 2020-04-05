@@ -35,3 +35,26 @@
 	color: silver;
 	cursor: not-allowed;
 }
+
+.method{
+  font-size: 0.5rem;
+  margin-right: 5px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.GET, .get {
+  color: #3eb63e;
+}
+
+.POST, .post {
+    color: #f5a623;
+}
+
+.PUT, .put {
+    color: #4a90e2;
+}
+
+.DELETE, .delete {
+    color: #ed4b48;
+}

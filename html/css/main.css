@@ -8239,62 +8239,62 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 14px;
     padding: 15px 20px 5px 20px;
     display: inline-block; }
-  .sidebar-wrapper .sidebar-menu ul li a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-decoration: none;
-    position: relative;
-    padding: 8px 30px 8px 20px;
-    width: 95%;
-    margin: auto;
-    border-radius: 4px; }
-    .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
-      display: inline-block;
-      -webkit-animation: swing ease-in-out .5s 1 alternate;
-      animation: swing ease-in-out .5s 1 alternate; }
-    .sidebar-wrapper .sidebar-menu ul li a i {
-      margin-right: 10px;
-      font-size: 12px;
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      text-align: center;
-      -ms-flex-negative: 0;
-      flex-shrink: 0; }
-    .sidebar-wrapper .sidebar-menu ul li a .menu-text {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      /* white-space: nowrap; */
-      text-overflow: ellipsis;
-      -ms-flex-negative: 1;
-      flex-shrink: 1;
-      overflow: hidden; }
-  .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f105";
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    background: 0 0;
-    position: absolute;
-    right: 15px;
-    top: 14px;
-    -webkit-transition: -webkit-transform .3s ease;
-    transition: -webkit-transform .3s ease;
-    transition: transform .3s ease;
-    transition: transform .3s ease, -webkit-transform .3s ease; }
+  /*.sidebar-wrapper .sidebar-menu ul li a {*/
+  /*  display: -webkit-box;*/
+  /*  display: -ms-flexbox;*/
+  /*  display: flex;*/
+  /*  -ms-flex-wrap: nowrap;*/
+  /*  flex-wrap: nowrap;*/
+  /*  -webkit-box-align: center;*/
+  /*  -ms-flex-align: center;*/
+  /*  align-items: center;*/
+  /*  text-decoration: none;*/
+  /*  position: relative;*/
+  /*  padding: 8px 30px 8px 20px;*/
+  /*  width: 95%;*/
+  /*  margin: auto;*/
+  /*  border-radius: 4px; }*/
+  /*  .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {*/
+  /*    display: inline-block;*/
+  /*    -webkit-animation: swing ease-in-out .5s 1 alternate;*/
+  /*    animation: swing ease-in-out .5s 1 alternate; }*/
+  /*  .sidebar-wrapper .sidebar-menu ul li a i {*/
+  /*    margin-right: 10px;*/
+  /*    font-size: 12px;*/
+  /*    width: 35px;*/
+  /*    height: 35px;*/
+  /*    line-height: 35px;*/
+  /*    text-align: center;*/
+  /*    -ms-flex-negative: 0;*/
+  /*    flex-shrink: 0; }*/
+  /*  .sidebar-wrapper .sidebar-menu ul li a .menu-text {*/
+  /*    -webkit-box-flex: 1;*/
+  /*    -ms-flex-positive: 1;*/
+  /*    flex-grow: 1;*/
+  /*    !* white-space: nowrap; *!*/
+  /*    text-overflow: ellipsis;*/
+  /*    -ms-flex-negative: 1;*/
+  /*    flex-shrink: 1;*/
+  /*    overflow: hidden; }*/
+  /*.sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {*/
+  /*  font-family: "Font Awesome 5 Free";*/
+  /*  font-weight: 900;*/
+  /*  content: "\f105";*/
+  /*  display: inline-block;*/
+  /*  font-style: normal;*/
+  /*  font-variant: normal;*/
+  /*  text-rendering: auto;*/
+  /*  -webkit-font-smoothing: antialiased;*/
+  /*  -moz-osx-font-smoothing: grayscale;*/
+  /*  text-align: center;*/
+  /*  background: 0 0;*/
+  /*  position: absolute;*/
+  /*  right: 15px;*/
+  /*  top: 14px;*/
+  /*  -webkit-transition: -webkit-transform .3s ease;*/
+  /*  transition: -webkit-transform .3s ease;*/
+  /*  transition: transform .3s ease;*/
+  /*  transition: transform .3s ease, -webkit-transform .3s ease; }*/
   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu {
     display: none; }
     .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {

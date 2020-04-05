@@ -66,46 +66,25 @@
                 </div>
                 <div class="row p-lg-4">
                     <article class="main-content col-md-9 pr-lg-5">
-                        <!-- title -Add bootstrap helpers for spacing -->
-                        <h1 class="mb-2 mt-3">Introduction</h1>
-                        <!--//title -->
-                        <p class="lead mb-3"> How to get started with Docu! </p>
-                        <p>Thank you for downloading our themes! We really appreciate it and ready to help you!</p>
-                        <p> This guide will help you get started with the template! All the important stuff – compiling the source, file structure, build tools, file includes – is documented here, but should you have any questions, always feel free to reach out to info@sharebootstrap.com </p>
-                        <!-- Sep -->
-                        <hr class="my-5">
-                        <!-- alert -->
-                        <div class="alert alert-primary d-flex justify-content-start align-items-center" role="alert"> <span class="fa fa-info mr-4"></span>
-                            <p class="m-0"> This documentation is always evolving. If you've not been here for a while, perhaps check out the This documentation is always evolving.This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like. </p>
-                        </div>
-                        <!-- heading -->
-                        <h3 class="font-weight-bold mb-2">
-                            Dev setup
-                        </h3>
-                        <p> To get started, you need to do the following: </p>
-                        <ol>
-                            <li><strong>Make sure you have Node installed</strong> since Landkit uses npm to manage dependencies. If you don't, installing is quite easy, just visit the <a href="https://nodejs.org/en/download/">Node Downloads page</a> and install it. </li>
-                            <li><strong>Unzip your theme and open your command line</strong>, making sure your command line prompt is at the root of the unzipped theme directory. </li>
-                            <li><strong class="badge badge-danger-soft"><code>npm install gulp-cli -g</code></strong>: If you don't have the Gulp command line interface, you need to install it.</li>
-                            <li><strong class="badge badge-danger-soft"><code>npm install</code></strong>: Open your command line to the root directory of your unzipped theme and run to install all of Landkit's dependencies.</li>
-                        </ol>
-                        <!-- Sep -->
-                        <hr class="my-5">
+                        <span class="GET method">GET</span>
+                        <br>
                         {%- for api in api_info %}
-                            <h3 class="font-weight-bold mb-2">
-                                {{api.name}}
-                            </h3>
-                            <p class="lead mb-3">{{api.method}} : {{api.url}}</p>
-                            <p>{{api.description}}</p>
-                            <figure class="highlight">
-                                <pre>
-                                    <code class="language-html" data-lang="json">
+                            <div id="{{api.id}}">
+                                <h3 class="font-weight-bold mb-2">
+                                    {{api.name}}
+                                </h3>
+                                <p class="lead mb-3">{{api.method}} : {{api.url}}</p>
+                                <p>{{api.description}}</p>
+                                <figure class="highlight">
+                                    <pre>
+                                        <code class="language-html" data-lang="json">
 
-                                        <span class="na">{{api.body}}</span>
-                                    </code>
-                                </pre>
-                            </figure>
-                            <hr class="my-5">
+                                            <span class="na">{{api.body}}</span>
+                                        </code>
+                                    </pre>
+                                </figure>
+                                <hr class="my-5">
+                            </div>
                         {%- endfor %}
                     </article>
                     <aside class="col-md-3 d-none d-md-block border-left">
@@ -149,7 +128,9 @@
             levels: 10,
             expandIcon: 'fas fa-caret-right',
             collapseIcon: 'fas fa-caret-down',
-            showTags: true
+            enableLinks: true,
+            showIcon: true,
+            showMethod: true
         });
     </script>
 
