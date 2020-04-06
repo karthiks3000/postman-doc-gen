@@ -218,7 +218,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"GRL\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"INTEREST\"\n}"
+							"raw": "{\n  \"name\": \"\",\n  \"groupType\": \"LEXILE\",\n  \"classId\": \"{{CLASS_ID}}\",\n  \"tieBreaker\": \"SKILL\"\n}"
 						},
 						"url": {
 							"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4",

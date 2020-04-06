@@ -19,6 +19,7 @@
 
 .treeview .list-group-item {
 	cursor: pointer;
+    background-color: whitesmoke;
 }
 
 .treeview span.indent {
