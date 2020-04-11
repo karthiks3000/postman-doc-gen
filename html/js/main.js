@@ -43,6 +43,15 @@ jQuery(function ($) {
         $(".sidebar-content").addClass("desktop");
 
     }
+
+    $('.dropdown-menu li').click(function(){
+        $(this).parent().closest('div').find('.response-name-label').text($(this).text());
+        var dataId= $(this).data('responseInfo');
+        var requestId= $(this).data('requestInfo');
+
+        $(".formatted-requests[data-request-id=" + requestId + "]").hide();
+        $(".formatted-requests[data-id=" + dataId + "]").show();
+    });
 });
 
 

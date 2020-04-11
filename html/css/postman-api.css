@@ -163,8 +163,6 @@ body #doc-body .examples .request, body #doc-body .examples .responses {
     padding-top: 10px;
     opacity: .4;
     color: #fff;
-    font-weight: 400;
-    font-size: 12px;
 }
 
 body #doc-body .examples .responses-index {

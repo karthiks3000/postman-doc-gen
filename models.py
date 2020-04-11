@@ -2,6 +2,8 @@ import json
 
 
 class ResponseModel:
+    id: str
+    request_id: str
     name: str
     method: str
     request_body: str

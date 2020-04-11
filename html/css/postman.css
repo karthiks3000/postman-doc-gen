@@ -1,0 +1,214 @@
+body #doc-body:not(.is-loading) {
+    background-image: -webkit-linear-gradient(-90deg, #303030 50%, #ffffff 50%);
+    background-image: linear-gradient(-90deg, #303030 50%, #ffffff 50%);
+}
+
+.row-no-padding {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row-no-padding [class*=col-] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section {
+    border-top: solid thin #ececec;
+    padding-top: 20px;
+}
+
+.api-information {
+    padding: 15px 20px;
+}
+.api-information .collection-name {
+    word-wrap: break-word;
+}
+.api-information .collection-name p {
+    color: #282828;
+    padding-top: 20px;
+    font-weight: 400;
+    font-size: 36px;
+}
+.api-information .collection-description {
+    overflow-x: hidden;
+}
+.api-information .heading {
+    margin: 15px 0;
+}
+.api-information .heading .name {
+    word-break: break-word;
+    font-weight: 400;
+    font-size: 18px;
+    color: #282828;
+}
+.api-information .heading .method {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.api-information .url {
+    margin-bottom: 15px;
+    word-break: break-all;
+    border: 1px solid #e6e6e6;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #282828;
+    background-color: #f8f8f8;
+}
+.api-information .description {
+    padding-bottom: 20px;
+    word-break: break-word;
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.api-information .request-body {
+    padding-top: 20px;
+}
+.api-information .request-body .body-heading {
+    height: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #282828;
+}
+.api-information .request-body .body-type {
+    color: #7e7e7e;
+    padding-left: 4px;
+}
+.api-information .request-body .raw-body {
+    position: relative;
+    margin-top: 15px;
+    padding-top: 5px;
+}
+.api-information pre {
+    color: grey;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: #fafafa;
+    border: solid thin #e6e6e6;
+    font-family: Courier,sans-serif;
+}
+
+
+body #doc-body .examples .request, body #doc-body .examples .responses {
+    border: 1px solid rgba(217, 217, 217, 0.25);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #d9d9d9 !important;
+}
+
+.examples>:first-child {
+    padding-top: 10px;
+}
+
+.examples .heading {
+    padding-top: 10px;
+    opacity: .5;
+    color: #fff;
+}
+
+.examples .sample-request {
+    padding: 0 20px;
+}
+.examples .request {
+    position: relative;
+    overflow-y: hidden;
+    border: 1px solid #505050;
+    margin: 0 20px 20px 20px;
+
+}
+
+.examples .responses-index .response-name {
+    height: inherit;
+    line-height: 30px;
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+}
+
+.examples .responses-index .response-name ul {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    font-size: 12px;
+    border-radius: 0;
+    background-color: #444;
+    max-height: 180px;
+    overflow-y: auto;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14);
+    color: #d9d9d9 !important;
+}
+.examples .responses-index .response-name ul li {
+    cursor: pointer;
+    padding: 0 16px;
+}
+
+.dropdown, .dropup {
+    position: relative;
+}
+
+body #doc-body .btn {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #d9d9d9 !important;
+}
+
+.examples .responses-index .response-name .responses-dropdown {
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    border-radius: 0;
+    background-color: #444;
+    font-size: 13px;
+}
+.examples .responses-index .response-status {
+    height: inherit;
+    line-height: 30px;
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+    font-size: 13px;
+}
+.examples .responses-index .response-status span {
+    left: 5px;
+    top: -1px;
+    color: #fff;
+    position: relative;
+}
+.truncate {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.open>.dropdown-menu {
+    display: block;
+}
+
+body :not(pre) > code[class*="language-"], body pre[class*="language-"], body .click-to-expand-wrapper.is-snippet-wrapper {
+    background-color: rgba(51, 51, 51, 0.05);
+    color: gray !important;
+}
+
+.click-to-expand-wrapper {
+    margin: 0;
+    border: none;
+}
+.click-to-expand-wrapper.is-snippet-wrapper {
+    transform: initial;
+    margin: 0;
+    border: none;
+    padding: 1em;
+    line-height: 1.5;
+    overflow-y: hidden;
+    max-height: 200px;
+}
+.formatted-requests{
+    display: none;
+}
+
+.examples .sample-response {
+    padding: 0 20px;
+}

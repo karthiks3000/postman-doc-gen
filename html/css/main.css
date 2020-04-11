@@ -8136,12 +8136,12 @@ a.text-dark:hover, a.text-dark:focus {
     opacity: 0; } }
 
 .sidebar-wrapper {
-  width: 280px;
+  width: 345px;
   height: 100%;
   max-height: 100%;
   position: fixed;
   top: 0;
-  left: -280px;
+  left: -345px;
   z-index: 999;
   -webkit-transition: left .3s ease, width .3s ease;
   transition: left .3s ease, width .3s ease; }
@@ -8593,8 +8593,6 @@ code.language-yaml {
 .language-bash .token.keyword {
   color: #0086b3; }
 
-body {
-  font-size: 1.05rem; }
 
 /*----------------page-wrapper----------------*/
 .page-wrapper {
@@ -8639,7 +8637,7 @@ body {
     left: 0px; }
   @media screen and (min-width: 768px) {
     .page-wrapper.toggled .page-content {
-      padding-left: 280px; } }
+      padding-left: 345px; } }
   @media screen and (max-width: 768px) {
     .page-wrapper.toggled .page-content .overlay {
       display: block; } }

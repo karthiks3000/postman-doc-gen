@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sidebar-themes.css">
     <link rel="stylesheet" href="css/bootstrap-treeview.css">
-    <link rel="stylesheet" href="css/postman-api.css">
+    <link rel="stylesheet" href="css/postman.css">
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
 
@@ -60,7 +60,7 @@
                 <div class="row p-lg-4">
                     <article class="main-content col-md-12 pr-lg-9" id="doc-body">
                         <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
+                            <div class="col-md-6 col-xs-12">
                                 <div class="api-information">
                                     <div class="collection-name">
                                         <p>{{collection.name}}</p>
@@ -69,158 +69,6 @@
                                         <p>{{collection.description}}</p>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-xs-12 examples"></div>
-                            </div>
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                              <div class="api-information">
-                                <div class="heading">
-                                  <div class="name">
-                                    <span class="POST method" title="POST">POST</span>
-                                    Create Group Set
-                                      <span class="lock-icon"></span>
-                                  </div>
-                                </div>
-                                <div class="url">https://cpd-service.dev.apps.scholastic.tech/classes/84200/group-sets?num-groups=2</div>
-                                <div class="description request-description">
-                                    <p>Acceptable values for groupType and tieBreaker are - TEACHER_SELECTED, GRL, LEXILE, SKILL, INTEREST</p>
-                                    <p>For teacher selected, tieBreaker must be null.</p>
-                                </div>
-                                <div class="headers">
-                                    <div class="heading">HEADERS</div>
-                                    <hr>
-                                      <div class="param row">
-                                        <div class="name col-md-3 col-xs-12">Content-Type</div>
-                                        <div class="value col-md-9 col-xs-12">application/json</div>
-                                      </div>
-                                  </div>
-                                <div class="query-params">
-                                    <div class="heading">PARAMS</div>
-                                    <hr>
-                                        <div class="param row">
-                                          <div class="name col-md-3 col-xs-12">num-groups</div>
-                                          <div class="value col-md-9 col-xs-12">2</div>
-                                        </div>
-                                  </div>
-                                <div class="request-body">
-                                    <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                      <hr>
-                                      <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code class="body-block is-highlighted language-javascript">
-                                                    <span class="token punctuation">{</span>
-                                                    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84200</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span>
-                                                    <span class="token punctuation">}</span>
-                                              </code>
-                                          </pre>
-                                      </div>
-
-                                  </div>
-                              </div>
-                              <br><br>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                  <div class="heading"><span>Example Request</span></div>
-
-                                  <div class="responses-index">
-                                      <div class="dropdown response-name">
-                                        <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                          <span class="response-name-label">Create Group Set - Algo Selected</span>
-                                          <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="c6eb26fe-4cc9-4ab7-b123-e382ec913253_dropdown">
-                                            <li class="truncate" data-request-info="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-request-name="c6eb26fe-4cc9-4ab7-b123-e382ec913253">Create Group Set - Algo Selected</li>
-                                            <li class="truncate" data-request-info="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-request-name="c6eb26fe-4cc9-4ab7-b123-e382ec913253">Create Group Set - Teacher Selected</li>
-                                        </ul>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="request code-snippet">
-                                  <div class="formatted-requests is-default" data-lang="http" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0">
-                                      <pre class="click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="Example Request"><button class="btn btn-sm pull-right copy-request copy-request-modal" data-clipboard-target="#http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button><code class=" is-highlighted language-javascript" id="http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253">POST <span class="token operator">/</span>classes<span class="token operator">/</span><span class="token number">84200</span><span class="token operator">/</span>group<span class="token operator">-</span>sets<span class="token operator">?</span>num<span class="token operator">-</span>groups<span class="token operator">=</span><span class="token number">2</span> HTTP<span class="token operator">/</span><span class="token number">1.1</span>
-                        Host<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cpd<span class="token operator">-</span>service<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>apps<span class="token punctuation">.</span>scholastic<span class="token punctuation">.</span>tech
-                        Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
-
-                        <span class="token punctuation">{</span>
-                            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                            <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                            <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84200</span><span class="token punctuation">,</span>
-                            <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span>
-                        <span class="token punctuation">}</span></code></pre>
-                                      <!-- Button over the expand overlay -->
-                                      <button class="btn btn-sm pull-right copy-request" data-clipboard-target="#http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button>
-                                  </div>
-                                  <div class="formatted-requests " data-lang="http" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1">
-                                      <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Example Request"><button class="btn btn-sm pull-right copy-request copy-request-modal" data-clipboard-target="#http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button><code class="language-javascript" id="http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253">POST /classes/84200/group-sets?num-groups=2 HTTP/1.1
-                        Host: https://cpd-service.dev.apps.scholastic.tech
-                        Content-Type: application/json
-
-                        {
-                            "name": "",
-                            "groupType": "TEACHER_SELECTED",
-                            "classId": 84200,
-                            "tieBreaker": null,
-                            "groups": [
-                                {
-                                    "name": "Group 1"
-                                },
-                                {
-                                    "name": "Group 2"
-                                }
-                            ]
-                        }</code></pre>
-                                      <!-- Button over the expand overlay -->
-                                      <button class="btn btn-sm pull-right copy-request" data-clipboard-target="#http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button>
-                                  </div>
-                            </div>
-                                <div class="sample-response">
-                                <div class="heading">
-                                  <span>Example Response</span>
-                                </div>
-
-
-                                <div class="responses-index">
-                                    <div class="response-status is-default" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0">
-                                      <span>200 － OK</span>
-                                    </div>
-                                    <div class="response-status " data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1">
-                                      <span>200 － OK</span>
-                                    </div>
-                                </div>
-                                <div class="responses code-snippet">
-                                      <div class="formatted-responses is-default" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-lang="json">
-                                        <pre class="click-to-expand-wrapper is-snippet-wrapper is-example is-expandable  language-javascript" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-lang="json" data-title="Example Response"><code class=" is-highlighted language-javascript"><span class="token punctuation">{</span>
-                          <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
-                          <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                          <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                          <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84057</span><span class="token punctuation">,</span>
-                          <span class="token string">"draft"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-                          <span class="token string">"newDataIsAvailable"</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-                          <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span><span class="token punctuation">,</span>
-                          <span class="token string">"levelingType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                          <span class="token string">"createdBy"</span><span class="token punctuation">:</span> <span class="token string">"216569"</span><span class="token punctuation">,</span>
-                          <span class="token string">"createdOn"</span><span class="token punctuation">:</span> <span class="token string">"2020-03-18T14:53:22.480409Z"</span><span class="token punctuation">,</span></code></pre>
-                                      </div>
-                                      <div class="formatted-responses " data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-lang="json">
-                                        <pre class="click-to-expand-wrapper is-snippet-wrapper is-example is-expandable" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-lang="json" data-title="Example Response"><code class="language-javascript">{
-                          "id": 52,
-                          "name": "",
-                          "groupType": "TEACHER_SELECTED",
-                          "classId": 84057,
-                          "draft": true,
-                          "newDataIsAvailable": false,
-                          "tieBreaker": null,
-                          "levelingType": "GRL",
-                          "createdBy": "216569",
-                          "createdOn": "2020-03-18T14:55:25.800383Z",</code></pre>
-                                      </div>
-                                </div>
-                              </div>
                             </div>
                         </div>
 
@@ -235,9 +83,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{api.url}}</div>
-                                   <div class="description request-description">
-                                       <p>{{api.description}}</p>
-                                   </div>
+                                    {%- if api.description is defined %}
+                                    <div class="description request-description">
+                                        <p>{{api.description|safe}}</p>
+                                    </div>
+                                    {% endif %}
+                                    {%- if api.body is defined %}
                                     <div class="request-body">
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
@@ -249,10 +100,61 @@
                                           </pre>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                             </div>
+                            {%- if api.responses|length > 0 %}
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                {%- for response in api.responses %}
+                                                <li class="truncate" data-request-info="{{response.request_id}}" data-response-info="{{response.id}}">{{response.name}}</li>
+                                                {%- endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%- for response in api.responses %}
+                                <div class="formatted-requests" data-request-id="{{response.request_id}}"  data-id="{{response.id}}">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted">{{response.request_body|safe}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>{{response.code}} - {{response.status}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{{response.response_body|safe}}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%- endfor %}
+                            </div>
+                            {% endif %}
                         </div>
-                        <hr class="my-5">
                         {%- endfor %}
                     </article>
                 </div>

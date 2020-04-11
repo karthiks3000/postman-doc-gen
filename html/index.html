@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sidebar-themes.css">
     <link rel="stylesheet" href="css/bootstrap-treeview.css">
-    <link rel="stylesheet" href="css/postman-api.css">
+    <link rel="stylesheet" href="css/postman.css">
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
 
@@ -60,7 +60,7 @@
                 <div class="row p-lg-4">
                     <article class="main-content col-md-12 pr-lg-9" id="doc-body">
                         <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
+                            <div class="col-md-6 col-xs-12">
                                 <div class="api-information">
                                     <div class="collection-name">
                                         <p>CPD</p>
@@ -69,158 +69,6 @@
                                         <p>APIs for Cross Product Dashboard</p>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-xs-12 examples"></div>
-                            </div>
-                        </div>
-                        <div class="row row-no-padding row-eq-height">
-                            <div class="col-md-6 col-xs-12 section">
-                              <div class="api-information">
-                                <div class="heading">
-                                  <div class="name">
-                                    <span class="POST method" title="POST">POST</span>
-                                    Create Group Set
-                                      <span class="lock-icon"></span>
-                                  </div>
-                                </div>
-                                <div class="url">https://cpd-service.dev.apps.scholastic.tech/classes/84200/group-sets?num-groups=2</div>
-                                <div class="description request-description">
-                                    <p>Acceptable values for groupType and tieBreaker are - TEACHER_SELECTED, GRL, LEXILE, SKILL, INTEREST</p>
-                                    <p>For teacher selected, tieBreaker must be null.</p>
-                                </div>
-                                <div class="headers">
-                                    <div class="heading">HEADERS</div>
-                                    <hr>
-                                      <div class="param row">
-                                        <div class="name col-md-3 col-xs-12">Content-Type</div>
-                                        <div class="value col-md-9 col-xs-12">application/json</div>
-                                      </div>
-                                  </div>
-                                <div class="query-params">
-                                    <div class="heading">PARAMS</div>
-                                    <hr>
-                                        <div class="param row">
-                                          <div class="name col-md-3 col-xs-12">num-groups</div>
-                                          <div class="value col-md-9 col-xs-12">2</div>
-                                        </div>
-                                  </div>
-                                <div class="request-body">
-                                    <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                      <hr>
-                                      <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code class="body-block is-highlighted language-javascript">
-                                                    <span class="token punctuation">{</span>
-                                                    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84200</span><span class="token punctuation">,</span>
-                                                    <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span>
-                                                    <span class="token punctuation">}</span>
-                                              </code>
-                                          </pre>
-                                      </div>
-
-                                  </div>
-                              </div>
-                              <br><br>
-                            </div>
-                            <div class="col-md-6 col-xs-12 examples">
-                                <div class="sample-request">
-                                  <div class="heading"><span>Example Request</span></div>
-
-                                  <div class="responses-index">
-                                      <div class="dropdown response-name">
-                                        <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                          <span class="response-name-label">Create Group Set - Algo Selected</span>
-                                          <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="c6eb26fe-4cc9-4ab7-b123-e382ec913253_dropdown">
-                                            <li class="truncate" data-request-info="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-request-name="c6eb26fe-4cc9-4ab7-b123-e382ec913253">Create Group Set - Algo Selected</li>
-                                            <li class="truncate" data-request-info="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-request-name="c6eb26fe-4cc9-4ab7-b123-e382ec913253">Create Group Set - Teacher Selected</li>
-                                        </ul>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="request code-snippet">
-                                  <div class="formatted-requests is-default" data-lang="http" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0">
-                                      <pre class="click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="Example Request"><button class="btn btn-sm pull-right copy-request copy-request-modal" data-clipboard-target="#http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button><code class=" is-highlighted language-javascript" id="http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253">POST <span class="token operator">/</span>classes<span class="token operator">/</span><span class="token number">84200</span><span class="token operator">/</span>group<span class="token operator">-</span>sets<span class="token operator">?</span>num<span class="token operator">-</span>groups<span class="token operator">=</span><span class="token number">2</span> HTTP<span class="token operator">/</span><span class="token number">1.1</span>
-                        Host<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cpd<span class="token operator">-</span>service<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>apps<span class="token punctuation">.</span>scholastic<span class="token punctuation">.</span>tech
-                        Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
-
-                        <span class="token punctuation">{</span>
-                            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                            <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                            <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84200</span><span class="token punctuation">,</span>
-                            <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span>
-                        <span class="token punctuation">}</span></code></pre>
-                                      <!-- Button over the expand overlay -->
-                                      <button class="btn btn-sm pull-right copy-request" data-clipboard-target="#http_0_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button>
-                                  </div>
-                                  <div class="formatted-requests " data-lang="http" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1">
-                                      <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Example Request"><button class="btn btn-sm pull-right copy-request copy-request-modal" data-clipboard-target="#http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button><code class="language-javascript" id="http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253">POST /classes/84200/group-sets?num-groups=2 HTTP/1.1
-                        Host: https://cpd-service.dev.apps.scholastic.tech
-                        Content-Type: application/json
-
-                        {
-                            "name": "",
-                            "groupType": "TEACHER_SELECTED",
-                            "classId": 84200,
-                            "tieBreaker": null,
-                            "groups": [
-                                {
-                                    "name": "Group 1"
-                                },
-                                {
-                                    "name": "Group 2"
-                                }
-                            ]
-                        }</code></pre>
-                                      <!-- Button over the expand overlay -->
-                                      <button class="btn btn-sm pull-right copy-request" data-clipboard-target="#http_1_c6eb26fe-4cc9-4ab7-b123-e382ec913253" data-before-copy="Copy to Clipboard" data-after-copy="Copied"></button>
-                                  </div>
-                            </div>
-                                <div class="sample-response">
-                                <div class="heading">
-                                  <span>Example Response</span>
-                                </div>
-
-
-                                <div class="responses-index">
-                                    <div class="response-status is-default" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0">
-                                      <span>200 － OK</span>
-                                    </div>
-                                    <div class="response-status " data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1">
-                                      <span>200 － OK</span>
-                                    </div>
-                                </div>
-                                <div class="responses code-snippet">
-                                      <div class="formatted-responses is-default" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-lang="json">
-                                        <pre class="click-to-expand-wrapper is-snippet-wrapper is-example is-expandable  language-javascript" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_0" data-lang="json" data-title="Example Response"><code class=" is-highlighted language-javascript"><span class="token punctuation">{</span>
-                          <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
-                          <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                          <span class="token string">"groupType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                          <span class="token string">"classId"</span><span class="token punctuation">:</span> <span class="token number">84057</span><span class="token punctuation">,</span>
-                          <span class="token string">"draft"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-                          <span class="token string">"newDataIsAvailable"</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-                          <span class="token string">"tieBreaker"</span><span class="token punctuation">:</span> <span class="token string">"SKILL"</span><span class="token punctuation">,</span>
-                          <span class="token string">"levelingType"</span><span class="token punctuation">:</span> <span class="token string">"LEXILE"</span><span class="token punctuation">,</span>
-                          <span class="token string">"createdBy"</span><span class="token punctuation">:</span> <span class="token string">"216569"</span><span class="token punctuation">,</span>
-                          <span class="token string">"createdOn"</span><span class="token punctuation">:</span> <span class="token string">"2020-03-18T14:53:22.480409Z"</span><span class="token punctuation">,</span></code></pre>
-                                      </div>
-                                      <div class="formatted-responses " data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-lang="json">
-                                        <pre class="click-to-expand-wrapper is-snippet-wrapper is-example is-expandable" data-id="c6eb26fe-4cc9-4ab7-b123-e382ec913253_1" data-lang="json" data-title="Example Response"><code class="language-javascript">{
-                          "id": 52,
-                          "name": "",
-                          "groupType": "TEACHER_SELECTED",
-                          "classId": 84057,
-                          "draft": true,
-                          "newDataIsAvailable": false,
-                          "tieBreaker": null,
-                          "levelingType": "GRL",
-                          "createdBy": "216569",
-                          "createdOn": "2020-03-18T14:55:25.800383Z",</code></pre>
-                                      </div>
-                                </div>
-                              </div>
                             </div>
                         </div>
                         <div class="row row-no-padding row-eq-height">
@@ -229,31 +77,42 @@
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
-                                            Interest Report <span class="lock-icon"></span>
+                                            Summary Report <span class="lock-icon"></span>
                                         </div>
                                      </div>
-                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
                                 <div class="api-information" id="2">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            First Phonological Report <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="3">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            First Comprehension Report <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="4">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -261,55 +120,51 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="3">
+                                <div class="api-information" id="5">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
-                                            Summary Report <span class="lock-icon"></span>
+                                            Litpro Report <span class="lock-icon"></span>
                                         </div>
                                      </div>
-                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="4">
+                                <div class="api-information" id="6">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Reading Readiness Report <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="7">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Interest Report <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="8">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="POST method" >POST</span>
@@ -317,32 +172,635 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
+                                    <div class="description request-description">
+                                        <p>Acceptable values for groupType and tieBreaker are - 
+TEACHER_SELECTED, GRL, LEXILE, SKILL, INTEREST
+
+For teacher selected, tieBreaker must be null.</p>
+                                    </div>
+                                    
                                     <div class="request-body">
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
                                           <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
                                               <code>
-                                                 {
-  "name": "",
-  "groupType": "LEXILE",
-  "classId": "{{CLASS_ID}}",
-  "tieBreaker": "SKILL"
+                                                {
+	"name": "",
+    "groupType": "LEXILE",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": "SKILL"
 }
                                               </code>
                                           </pre>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="8" data-response-info="response_1">Create Group Set - Algo Selected</li>
+                                                <li class="truncate" data-request-info="8" data-response-info="response_2">Create Group Set - Teacher Selected</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests" data-request-id="8"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted">{
+	"name": "",
+    "groupType": "LEXILE",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": "SKILL"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{
+    "id": 50,
+    "name": "",
+    "groupType": "LEXILE",
+    "classId": 84057,
+    "draft": true,
+    "newDataIsAvailable": false,
+    "tieBreaker": "SKILL",
+    "levelingType": "LEXILE",
+    "createdBy": "216569",
+    "createdOn": "2020-03-18T14:53:22.480409Z",
+    "updatedBy": null,
+    "updatedOn": null,
+    "groups": [
+        {
+            "id": 61,
+            "name": "Student Roster",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524445Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [
+                "216640",
+                "220116",
+                "216639",
+                "216638",
+                "216646",
+                "216645",
+                "216637",
+                "216648",
+                "216636",
+                "216647",
+                "216642",
+                "216641",
+                "216644",
+                "216930",
+                "216963",
+                "216643"
+            ],
+            "interests": [],
+            "skills": [],
+            "roster": true,
+            "changed": false
+        },
+        {
+            "id": 62,
+            "name": "Group 2",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524436Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        },
+        {
+            "id": 63,
+            "name": "Group 1",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:53:22.524442Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        }
+    ],
+    "studentIds": [
+        "216643",
+        "216644",
+        "216930",
+        "216963",
+        "216641",
+        "216642",
+        "216640",
+        "220116",
+        "216638",
+        "216639",
+        "216636",
+        "216647",
+        "216637",
+        "216648",
+        "216645",
+        "216646"
+    ],
+    "groupStudents": [
+        {
+            "studentId": "216648",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216639",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216643",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "220116",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": [
+                {
+                    "skillShortName": "antonyms",
+                    "skillName": "Antonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                },
+                {
+                    "skillShortName": "synonyms",
+                    "skillName": "Synonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                }
+            ]
+        },
+        {
+            "studentId": "216638",
+            "readingLevel": "111",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2019-12-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216930",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216644",
+            "readingLevel": "111",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-30T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216642",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216641",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [
+                {
+                    "interestShortName": "biographies_and_autobiographies",
+                    "interestName": "Biographies & Autobiographies"
+                },
+                {
+                    "interestShortName": "science_and_technology",
+                    "interestName": "Science & Technology"
+                },
+                {
+                    "interestShortName": "nature_and_the_environment",
+                    "interestName": "Nature & the Environment"
+                },
+                {
+                    "interestShortName": "animals_and_pets",
+                    "interestName": "Animals & Pets"
+                }
+            ],
+            "skills": []
+        },
+        {
+            "studentId": "216645",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216636",
+            "readingLevel": "250",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-30T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216963",
+            "readingLevel": "110",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216637",
+            "readingLevel": "300",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2019-11-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216640",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216646",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216647",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests" data-request-id="8"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted">{
+	"name": "",
+    "groupType": "TEACHER_SELECTED",
+    "classId": {{CLASS_ID}},
+    "tieBreaker": null,
+    "groups": [
+    	{
+    		"name": "Group 1"
+    	},
+    	{
+    		"name": "Group 2"
+    	}
+    ]
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{
+    "id": 52,
+    "name": "",
+    "groupType": "TEACHER_SELECTED",
+    "classId": 84057,
+    "draft": true,
+    "newDataIsAvailable": false,
+    "tieBreaker": null,
+    "levelingType": "GRL",
+    "createdBy": "216569",
+    "createdOn": "2020-03-18T14:55:25.800383Z",
+    "updatedBy": null,
+    "updatedOn": null,
+    "groups": [
+        {
+            "id": 65,
+            "name": "Group 2",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858580Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        },
+        {
+            "id": 66,
+            "name": "Student Roster",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858588Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [
+                "216646",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216638",
+                "216642",
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216645",
+                "220116",
+                "216640",
+                "216641",
+                "216639"
+            ],
+            "interests": [],
+            "skills": [],
+            "roster": true,
+            "changed": false
+        },
+        {
+            "id": 67,
+            "name": "Group 1",
+            "readingLevel": null,
+            "createdBy": "216569",
+            "createdOn": "2020-03-18T14:55:25.858586Z",
+            "updatedBy": null,
+            "updatedOn": null,
+            "studentIds": [],
+            "interests": [],
+            "skills": [],
+            "roster": false,
+            "changed": false
+        }
+    ],
+    "studentIds": [
+        "216643",
+        "216644",
+        "216930",
+        "216963",
+        "216641",
+        "216642",
+        "216640",
+        "220116",
+        "216638",
+        "216639",
+        "216636",
+        "216647",
+        "216637",
+        "216648",
+        "216645",
+        "216646"
+    ],
+    "groupStudents": [
+        {
+            "studentId": "216643",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216639",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-08T18:20:14Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216638",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2019-12-04T20:50:20Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216930",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216963",
+            "readingLevel": "J",
+            "readingLevelSource": "litpro",
+            "readingLevelDateAssessed": "2020-01-01T00:00:00Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216645",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216647",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216648",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216636",
+            "readingLevel": "E",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-02-21T16:34:15Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216641",
+            "readingLevel": "M",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-02-21T16:35:16Z",
+            "interests": [
+                {
+                    "interestShortName": "biographies_and_autobiographies",
+                    "interestName": "Biographies & Autobiographies"
+                },
+                {
+                    "interestShortName": "science_and_technology",
+                    "interestName": "Science & Technology"
+                },
+                {
+                    "interestShortName": "nature_and_the_environment",
+                    "interestName": "Nature & the Environment"
+                },
+                {
+                    "interestShortName": "animals_and_pets",
+                    "interestName": "Animals & Pets"
+                }
+            ],
+            "skills": []
+        },
+        {
+            "studentId": "216640",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2019-12-04T20:50:39Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216637",
+            "readingLevel": "A",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-07T20:24:31Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216644",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-29T19:58:36Z",
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "220116",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": [
+                {
+                    "skillShortName": "antonyms",
+                    "skillName": "Antonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                },
+                {
+                    "skillShortName": "synonyms",
+                    "skillName": "Synonyms",
+                    "correctAttempts": 7,
+                    "totalAttempts": 7,
+                    "skillAvg": 1
+                }
+            ]
+        },
+        {
+            "studentId": "216642",
+            "readingLevel": null,
+            "readingLevelSource": null,
+            "readingLevelDateAssessed": null,
+            "interests": [],
+            "skills": []
+        },
+        {
+            "studentId": "216646",
+            "readingLevel": "B",
+            "readingLevelSource": "nsgra",
+            "readingLevelDateAssessed": "2020-01-07T20:24:18Z",
+            "interests": [],
+            "skills": []
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="5">
+                                <div class="api-information" id="9">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="PUT method" >PUT</span>
@@ -350,9 +808,6 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
                                     <div class="request-body">
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
@@ -361,7 +816,7 @@
                                               <code>
                                                 {
     "id": {{GROUP_SET_ID}},
-    "name": "Karthik's LEXILE + SKILL",
+    "name": "Group Set 6: TEACHER_SELECTED",
     "groupType": {{GROUP_TYPE}},
     "classId": {{CLASS_ID}},
     "draft": false,
@@ -374,13 +829,13 @@
                                           </pre>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="6">
+                                <div class="api-information" id="10">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -388,27 +843,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="7">
+                                <div class="api-information" id="11">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -416,27 +856,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="8">
+                                <div class="api-information" id="12">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -444,27 +869,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="9">
+                                <div class="api-information" id="13">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -472,27 +882,944 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="13" data-response-info="response_3">Get Class Group Sets - GRL + Interest</li>
+                                                <li class="truncate" data-request-info="13" data-response-info="response_4">Get Class Group Sets - Teacher Selected</li>
+                                                <li class="truncate" data-request-info="13" data-response-info="response_5">Get Class Group Sets - Skill + Interest</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests" data-request-id="13"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted"></code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{
+    "results": [
+        {
+            "id": 173,
+            "name": "Karthik's Group Set 1",
+            "groupType": "GRL",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": "INTEREST",
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-25T19:48:50Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-25T19:48:53Z",
+            "groups": [
+                {
+                    "id": 369,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [
+                        "216641",
+                        "216642",
+                        "220116",
+                        "216640",
+                        "216636",
+                        "216647",
+                        "216637",
+                        "216648"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": null
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": null,
+                                "skill_c": null
+                            },
+                            "resources": {
+                                "category": null,
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": null
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 370,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                },
+                {
+                    "id": 368,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T19:48:50Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T19:48:53Z",
+                    "studentIds": [
+                        "216646",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216645",
+                        "216643",
+                        "216639",
+                        "216638"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": null
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": null,
+                                "skill_c": null
+                            },
+                            "resources": {
+                                "category": null,
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": null
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests" data-request-id="13"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted"></code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{
+    "results": [
+        {
+            "id": 175,
+            "name": "Karthik's Group Set 1",
+            "groupType": "TEACHER_SELECTED",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": null,
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-26T13:47:06Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-26T13:47:10Z",
+            "groups": [
+                {
+                    "id": 372,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [
+                        "216639",
+                        "216638",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216643",
+                        "216646",
+                        "216645"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 374,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [
+                        "216642",
+                        "216641",
+                        "216640",
+                        "220116",
+                        "216637",
+                        "216648",
+                        "216636",
+                        "216647"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": "B_C_D_E_F_G_H",
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": "B-H",
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 373,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-26T13:47:06Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-26T13:47:10Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests" data-request-id="13"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                <code class="is-highlighted"></code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
+                                                    <code class="is-highlighted">{
+    "results": [
+        {
+            "id": 172,
+            "name": "Karthik's Group Set 1",
+            "groupType": "SKILL",
+            "classId": 84057,
+            "draft": false,
+            "newDataIsAvailable": false,
+            "tieBreaker": "INTEREST",
+            "levelingType": "GRL",
+            "createdBy": "216569",
+            "createdOn": "2020-03-25T15:01:48Z",
+            "updatedBy": "216569",
+            "updatedOn": "2020-03-25T15:01:52Z",
+            "groups": [
+                {
+                    "id": 367,
+                    "name": "GROUP 2",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [
+                        "216636",
+                        "216647",
+                        "216641",
+                        "216640",
+                        "216642",
+                        "220116",
+                        "216637",
+                        "216648"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "music_and_the_arts",
+                            "interestName": "Music & the Arts"
+                        },
+                        {
+                            "interestShortName": "transportation",
+                            "interestName": "Transportation"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.9
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.2
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": null,
+                            "subject": [
+                                "Animals",
+                                "Arts",
+                                "Transportation"
+                            ],
+                            "genre": [
+                                "Animal Fantasy"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "2",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "2",
+                                    "grl": null,
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0003",
+                                        "SRDSUBJ_0027"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0002"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": 366,
+                    "name": "Student Roster",
+                    "readingLevel": null,
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [],
+                    "interests": [],
+                    "skills": [],
+                    "roster": true
+                },
+                {
+                    "id": 365,
+                    "name": "GROUP 1",
+                    "readingLevel": "B-H",
+                    "createdBy": "216569",
+                    "createdOn": "2020-03-25T15:01:48Z",
+                    "updatedBy": "216569",
+                    "updatedOn": "2020-03-25T15:01:52Z",
+                    "studentIds": [
+                        "216646",
+                        "216645",
+                        "216644",
+                        "216930",
+                        "216963",
+                        "216643",
+                        "216639",
+                        "216638"
+                    ],
+                    "interests": [
+                        {
+                            "interestShortName": "action_and_adventure",
+                            "interestName": "Action & Adventure"
+                        },
+                        {
+                            "interestShortName": "animals_and_pets",
+                            "interestName": "Animals & Pets"
+                        },
+                        {
+                            "interestShortName": "fantasy_sci-fi_and_make_believe",
+                            "interestName": "Fantasy, Sci-Fi & Make Believe"
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "skillShortName": "analogies",
+                            "skillName": "Analogies",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.4
+                        },
+                        {
+                            "skillShortName": "blending",
+                            "skillName": "Blending",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.5
+                        },
+                        {
+                            "skillShortName": "alphabet",
+                            "skillName": "Alphabet Knowledge",
+                            "correctAttempts": 0,
+                            "totalAttempts": 0,
+                            "skillAvg": 0.8
+                        }
+                    ],
+                    "roster": false,
+                    "recommendations": {
+                        "lba": {
+                            "level": null,
+                            "subject": [
+                                "Adventurers",
+                                "Animals",
+                                "Princes, Princesses, Kings, Queens"
+                            ],
+                            "genre": [
+                                "Action & Adventure",
+                                "Adventure",
+                                "Animal Fantasy",
+                                "Science Fiction",
+                                "Fantasy",
+                                "Fractured Fairy Tale",
+                                "Animal Fantasy",
+                                "Fairy Tale"
+                            ],
+                            "skill": [
+                                "Letter-Sound Correspondence",
+                                "Consonant Blends",
+                                "Connect Ideas",
+                                "Word Meaning"
+                            ]
+                        },
+                        "sl": {
+                            "grade": "3",
+                            "lessons": {
+                                "skill_p": [
+                                    "SKILL_0073"
+                                ],
+                                "skill_c": [
+                                    "SKILL_0096",
+                                    "SKILL_0070"
+                                ]
+                            },
+                            "resources": {
+                                "category": {
+                                    "comprehension-support": "Comprehension Toolkit",
+                                    "vocabulary-toolkit": "Vocabulary Toolkit",
+                                    "grammar-toolkit": "Grammar Toolkit",
+                                    "assessment-management-toolkit": "Assessment Toolkit",
+                                    "phonics-resources": "Phonics Toolkit"
+                                },
+                                "shared-reading-library": {
+                                    "grade": "3",
+                                    "grl": null,
+                                    "subject": [
+                                        "SRDSUBJ_0002",
+                                        "SRDSUBJ_0001",
+                                        "SRDSUBJ_0020"
+                                    ],
+                                    "genre": [
+                                        "SRDGENR_0005",
+                                        "SRDGENR_0017",
+                                        "SRDGENR_0006",
+                                        "SRDGENR_0001",
+                                        "SRDGENR_0002",
+                                        "SRDGENR_0003",
+                                        "SRDGENR_0008"
+                                    ],
+                                    "skill": [
+                                        "SRDSKILL_0008",
+                                        "SRDSKILL_0016"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "studentIds": [
+                "216643",
+                "216644",
+                "216930",
+                "216963",
+                "216641",
+                "216642",
+                "216640",
+                "220116",
+                "216638",
+                "216639",
+                "216636",
+                "216647",
+                "216637",
+                "216648",
+                "216645",
+                "216646"
+            ]
+        }
+    ],
+    "total": 1
+}</code>
+                                                </pre>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="10">
+                                <div class="api-information" id="14">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="DELETE method" >DELETE</span>
@@ -500,27 +1827,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="11">
+                                <div class="api-information" id="15">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -528,27 +1840,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="12">
+                                <div class="api-information" id="16">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -556,27 +1853,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/students</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="13">
+                                <div class="api-information" id="17">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -584,27 +1866,12 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
-                                <div class="api-information" id="14">
+                                <div class="api-information" id="18">
                                      <div class="heading">
                                         <div class="name">
                                             <span class="GET method" >GET</span>
@@ -612,24 +1879,35 @@
                                         </div>
                                      </div>
                                     <div class="url">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</div>
-                                   <div class="description request-description">
-                                       <p>None</p>
-                                   </div>
-                                    <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
-                                        <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
-                                              <code>
-                                                
-                                              </code>
-                                          </pre>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-5">
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="19">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Get Guided Reading Levels <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="20">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Get Independent Guided Reading Levels <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</div>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -647,7 +1925,7 @@
     <script src="js/bootstrap-treeview.js"></script>
     <script src="js/main.js"></script>
     <script type="application/javascript">
-        var data = [{'text': 'Grouping', 'nodes': [{'text': 'Reports', 'nodes': [{'text': 'Interest Report', 'href': '#1', 'method': 'GET'}, {'text': 'WORD Report', 'href': '#2', 'method': 'GET'}, {'text': 'Summary Report', 'href': '#3', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Create Group Set', 'href': '#4', 'method': 'POST'}, {'text': 'Save Group Set', 'href': '#5', 'method': 'PUT'}, {'text': 'Get A Group Set', 'href': '#6', 'method': 'GET'}, {'text': 'Edit Group Set', 'href': '#7', 'method': 'GET'}, {'text': 'Preview Group Set', 'href': '#8', 'method': 'GET'}, {'text': 'Get Class Group Sets', 'href': '#9', 'method': 'GET'}, {'text': 'Delete Group Set', 'href': '#10', 'method': 'DELETE'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'SDM Proxy', 'nodes': [{'text': 'Get classes', 'href': '#11', 'method': 'GET'}, {'text': 'Get students', 'href': '#12', 'method': 'GET'}, {'text': 'Get Teacher Entitlements', 'href': '#13', 'method': 'GET'}, {'text': 'Get Class Entitlements', 'href': '#14', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}]
+        var data = [{'text': 'Grouping', 'nodes': [{'text': 'Reports', 'nodes': [{'text': 'Summary Report', 'href': '#1', 'method': 'GET'}, {'text': 'First Phonological Report', 'href': '#2', 'method': 'GET'}, {'text': 'First Comprehension Report', 'href': '#3', 'method': 'GET'}, {'text': 'WORD Report', 'href': '#4', 'method': 'GET'}, {'text': 'Litpro Report', 'href': '#5', 'method': 'GET'}, {'text': 'Reading Readiness Report', 'href': '#6', 'method': 'GET'}, {'text': 'Interest Report', 'href': '#7', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Create Group Set', 'href': '#8', 'method': 'POST'}, {'text': 'Save Group Set', 'href': '#9', 'method': 'PUT'}, {'text': 'Get A Group Set', 'href': '#10', 'method': 'GET'}, {'text': 'Edit Group Set', 'href': '#11', 'method': 'GET'}, {'text': 'Preview Group Set', 'href': '#12', 'method': 'GET'}, {'text': 'Get Class Group Sets', 'href': '#13', 'method': 'GET'}, {'text': 'Delete Group Set', 'href': '#14', 'method': 'DELETE'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'SDM Proxy', 'nodes': [{'text': 'Get classes', 'href': '#15', 'method': 'GET'}, {'text': 'Get students', 'href': '#16', 'method': 'GET'}, {'text': 'Get Teacher Entitlements', 'href': '#17', 'method': 'GET'}, {'text': 'Get Class Entitlements', 'href': '#18', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Reading Levels - GRL', 'nodes': [{'text': 'Get Guided Reading Levels', 'href': '#19', 'method': 'GET'}, {'text': 'Get Independent Guided Reading Levels', 'href': '#20', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}]
         console.log(data);
         $('#tree').treeview({
             data: data,

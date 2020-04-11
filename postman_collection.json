@@ -13,7 +13,7 @@
 					"name": "Reports",
 					"item": [
 						{
-							"name": "Interest Report",
+							"name": "Summary Report",
 							"event": [
 								{
 									"listen": "test",
@@ -30,7 +30,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}",
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}",
 									"host": [
 										"{{HOST}}"
 									],
@@ -40,7 +40,87 @@
 										"group-sets",
 										"{{GROUP_SET_ID}}",
 										"reports",
-										"interests"
+										"summary"
+									],
+									"query": [
+										{
+											"key": "group-id",
+											"value": "{{GROUP_ID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "First Phonological Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bc006a33-08bd-4bbb-a89e-4d05b6be43f1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"classes",
+										"{{CLASS_ID}}",
+										"group-sets",
+										"{{GROUP_SET_ID}}",
+										"reports",
+										"first-phonological"
+									],
+									"query": [
+										{
+											"key": "group-id",
+											"value": "{{GROUP_ID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "First Comprehension Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bc006a33-08bd-4bbb-a89e-4d05b6be43f1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"classes",
+										"{{CLASS_ID}}",
+										"group-sets",
+										"{{GROUP_SET_ID}}",
+										"reports",
+										"first-comprehension"
 									],
 									"query": [
 										{
@@ -93,7 +173,7 @@
 							"response": []
 						},
 						{
-							"name": "Summary Report",
+							"name": "Litpro Report",
 							"event": [
 								{
 									"listen": "test",
@@ -110,7 +190,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}",
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}",
 									"host": [
 										"{{HOST}}"
 									],
@@ -120,7 +200,87 @@
 										"group-sets",
 										"{{GROUP_SET_ID}}",
 										"reports",
-										"summary"
+										"litpro"
+									],
+									"query": [
+										{
+											"key": "group-id",
+											"value": "{{GROUP_ID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reading Readiness Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bc006a33-08bd-4bbb-a89e-4d05b6be43f1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"classes",
+										"{{CLASS_ID}}",
+										"group-sets",
+										"{{GROUP_SET_ID}}",
+										"reports",
+										"reading"
+									],
+									"query": [
+										{
+											"key": "group-id",
+											"value": "{{GROUP_ID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Interest Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bc006a33-08bd-4bbb-a89e-4d05b6be43f1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"classes",
+										"{{CLASS_ID}}",
+										"group-sets",
+										"{{GROUP_SET_ID}}",
+										"reports",
+										"interests"
 									],
 									"query": [
 										{
@@ -133,6 +293,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -150,51 +311,11 @@
 									"    pm.environment.set(\"GROUP_TYPE\", JSON.stringify(jsonData.groupType));",
 									"    pm.environment.set(\"TIE_BREAKER\", JSON.stringify(jsonData.tieBreaker));",
 									"    pm.environment.set(\"LEVELING_TYPE\", JSON.stringify(jsonData.levelingType));",
-									"    var interests = [",
-									"        {",
-									"            \"interestShortName\": \"biographies_and_autobiographies\",",
-									"            \"interestName\": \"Biographies & Autobiographies\"",
-									"        },",
-									"        {",
-									"            \"interestShortName\": \"science_and_technology\",",
-									"            \"interestName\": \"Science & Technology\"",
-									"        },",
-									"        {",
-									"            \"interestShortName\": \"around_the_world\",",
-									"            \"interestName\": \"Around the World\"",
-									"        }",
-									"    ];",
-									"    var skills = [",
-									"        {",
-									"            \"skillShortName\": \"analogies\",",
-									"            \"skillName\": \"Analogies\",",
-									"            \"correctAttempts\": 4.0,",
-									"            \"totalAttempts\": 10.0,",
-									"            \"skillAvg\": 0.4",
-									"        },",
-									"        {",
-									"            \"skillShortName\": \"blending\",",
-									"            \"skillName\": \"Blending\",",
-									"            \"correctAttempts\": 5.0,",
-									"            \"totalAttempts\": 10.0,",
-									"            \"skillAvg\": 0.5",
-									"        },",
-									"        {",
-									"            \"skillShortName\": \"alphabet\",",
-									"            \"skillName\": \"Alphabet Knowledge\",",
-									"            \"correctAttempts\": 8.0,",
-									"            \"totalAttempts\": 10.0,",
-									"            \"skillAvg\": 0.8",
-									"        }",
-									"    ];",
-									"    var readingLevel = \"500L-800L\";",
-									"            ",
+									"",
 									"    var groups = jsonData.groups;",
+									"    ",
 									"    for(var i=0; i< groups.length; i++) {",
 									"        if(groups[i].name != 'Student Roster'){",
-									"            groups[i].interests = interests;",
-									"            groups[i].skills = skills;",
-									"            groups[i].readingLevel = readingLevel;",
 									"            pm.environment.set(\"GROUP_ID\", groups[i].id);",
 									"        }",
 									"        groups[i].changed = true;",
@@ -218,7 +339,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"\",\n  \"groupType\": \"LEXILE\",\n  \"classId\": \"{{CLASS_ID}}\",\n  \"tieBreaker\": \"SKILL\"\n}"
+							"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4",
@@ -254,7 +380,12 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}"
+									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2",
@@ -344,7 +475,12 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"TEACHER_SELECTED\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": null,\n    \"groups\": [\n    \t{\n    \t\t\"name\": \"Group 1\"\n    \t},\n    \t{\n    \t\t\"name\": \"Group 2\"\n    \t}\n    ]\n}"
+									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"TEACHER_SELECTED\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": null,\n    \"groups\": [\n    \t{\n    \t\t\"name\": \"Group 1\"\n    \t},\n    \t{\n    \t\t\"name\": \"Group 2\"\n    \t}\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2",
@@ -448,7 +584,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": {{GROUP_SET_ID}},\n    \"name\": \"Karthik's LEXILE + SKILL\",\n    \"groupType\": {{GROUP_TYPE}},\n    \"classId\": {{CLASS_ID}},\n    \"draft\": false,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": {{TIE_BREAKER}},\n    \"levelingType\": {{LEVELING_TYPE}},\n    \"groups\": {{GROUPS}}\n}"
+							"raw": "{\n    \"id\": {{GROUP_SET_ID}},\n    \"name\": \"Group Set 6: TEACHER_SELECTED\",\n    \"groupType\": {{GROUP_TYPE}},\n    \"classId\": {{CLASS_ID}},\n    \"draft\": false,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": {{TIE_BREAKER}},\n    \"levelingType\": {{LEVELING_TYPE}},\n    \"groups\": {{GROUPS}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}",
@@ -837,7 +978,8 @@
 					"response": []
 				}
 			],
-			"description": "All grouping related API calls"
+			"description": "All grouping related API calls",
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "SDM Proxy",
@@ -980,7 +1122,92 @@
 					"response": []
 				}
 			],
-			"description": "All calls that are meant to return SDM info"
+			"description": "All calls that are meant to return SDM info",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reading Levels - GRL",
+			"item": [
+				{
+					"name": "Get Guided Reading Levels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"reading-levels",
+								"guided-reading-levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Independent Guided Reading Levels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"reading-levels",
+								"independent-guided-reading-levels"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-04-06"
+								},
+								{
+									"key": "endDate",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"auth": {
@@ -1017,5 +1244,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

@@ -10,6 +10,7 @@ class DocumentGenerator():
     api_info = []
     api_collection: APICollectionModel
     api_id_counter: int
+    response_id: int
 
     def __init__(self):
         super().__init__()
@@ -32,6 +33,7 @@ class DocumentGenerator():
 
         self.side_tree = []
         self.api_id_counter = 0
+        self.response_id = 0
         self.add_items(self.side_tree, json_collection)
 
         # print(json.dumps(self.side_tree, indent=4))
@@ -68,9 +70,10 @@ class DocumentGenerator():
                 api = APIModel()
                 api.id = self.api_id_counter
                 api.name = item.get('name')
-                api.description = item.get('description')
+                if item.get('request').get('description', None) is not None:
+                    api.description = item.get('request').get('description')
                 if item.get('request').get('body', None) is not None:
-                    api.body = item.get('request').get('body').get('raw')
+                    api.body = item.get('request').get('body').get('raw', None)
                 api.method = item.get('request').get('method')
                 api.url = item.get('request').get('url').get('raw')
                 api.responses = self.get_responses(item.get('response', []))
@@ -80,11 +83,14 @@ class DocumentGenerator():
         responses = []
 
         for res in json_responses:
+            self.response_id = self.response_id + 1
             response = ResponseModel()
+            response.request_id = str(self.api_id_counter)
+            response.id = 'response_' + str(self.response_id)
             response.name = res.get('name')
             response.method = res.get('originalRequest').get('method')
             if res.get('originalRequest').get('body', None) is not None:
-                response.request_body = res.get('originalRequest').get('body', None).get('raw')
+                response.request_body = res.get('originalRequest').get('body').get('raw', None)
             response.url = res.get('originalRequest').get('url').get('raw')
             response.status = res.get('status')
             response.code = res.get('code')
