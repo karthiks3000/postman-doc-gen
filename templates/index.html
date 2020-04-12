@@ -74,7 +74,7 @@
                     <div class="col-md-8">
 
                     </div>
-                    <div class="col-md-3 text-left"> <a href="https://sharebootstrap.com/docu-free-bootstrap-4-documentation-theme/" class="btn btn-sm btn-primary btn-rounded">Free Download</a> </div>
+<!--                    <div class="col-md-3 text-left"> <a href="https://sharebootstrap.com/docu-free-bootstrap-4-documentation-theme/" class="btn btn-sm btn-primary btn-rounded">Free Download</a> </div>-->
                 </div>
                 <div class="row p-lg-4">
                     <article class="main-content col-md-12 pr-lg-9" id="doc-body">
@@ -101,13 +101,15 @@
                                             {{api.name}} <span class="lock-icon"></span>
                                         </div>
                                      </div>
+                                    {%- if api.url is defined and api.url is not none%}
                                     <div class="url">{{api.url}}</div>
-                                    {%- if api.description is defined %}
+                                    {% endif %}
+                                    {%- if api.description is defined and api.description is not none%}
                                     <div class="description request-description">
                                         <p>{{api.description|safe}}</p>
                                     </div>
                                     {% endif %}
-                                    {%- if api.body is defined %}
+                                    {%- if api.body is defined and api.body is not none%}
                                     <div class="request-body">
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
@@ -152,7 +154,7 @@
                                             </pre>
                                         </div>
                                     </div>
-                                    {%- if example.response_body is defined %}
+                                    {%- if example.response_body is defined and example.response_body is not none%}
                                     <div class="sample-response">
                                         <div class="heading">
                                             <span>Example Response</span>

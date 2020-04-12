@@ -2,14 +2,14 @@ import json
 
 
 class APIExampleModel:
-    id: str
-    request_id: str
-    name: str
-    method: str
+    id: str = None
+    request_id: str = None
+    name: str = None
+    method: str = None
     request_body: str
-    url: str
-    status: str
-    code: int
+    url: str = None
+    status: str = None
+    code: int = None
     response_body: str
 
     def __init__(self):
@@ -20,13 +20,13 @@ class APIExampleModel:
 
 
 class APIModel:
-    id: int
-    name: str
-    description: str
-    method: str
-    body: str
-    url: str
-    examples: list
+    id: int = None
+    name: str = None
+    description: str = None
+    method: str = None
+    body: str = None
+    url: str = None
+    examples: list = []
 
     def __init__(self):
         super().__init__()
@@ -36,9 +36,9 @@ class APIModel:
 
 
 class APICollectionModel:
-    name: str
-    description: str
-    schema: str
+    name: str = None
+    description: str = None
+    schema: str = None
 
     def __init__(self):
         super().__init__()
