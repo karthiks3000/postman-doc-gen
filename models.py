@@ -1,7 +1,7 @@
 import json
 
 
-class ResponseModel:
+class APIExampleModel:
     id: str
     request_id: str
     name: str
@@ -26,7 +26,7 @@ class APIModel:
     method: str
     body: str
     url: str
-    responses: list
+    examples: list
 
     def __init__(self):
         super().__init__()

@@ -1,7 +1,7 @@
 import os
 import json
 from collections import OrderedDict
-from models import ResponseModel, APIModel, APICollectionModel
+from models import APIExampleModel, APIModel, APICollectionModel
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -67,37 +67,52 @@ class DocumentGenerator():
                 node['href'] = '#' + str(self.api_id_counter)
                 node['method'] = item.get('request').get('method')
                 tree.append(node)
-                api = APIModel()
-                api.id = self.api_id_counter
-                api.name = item.get('name')
-                if item.get('request').get('description', None) is not None:
-                    api.description = item.get('request').get('description')
-                if item.get('request').get('body', None) is not None:
-                    api.body = item.get('request').get('body').get('raw', None)
-                api.method = item.get('request').get('method')
-                api.url = item.get('request').get('url').get('raw')
-                api.responses = self.get_responses(item.get('response', []))
-                self.api_info.append(api)
+                self.add_apis(item)
 
-    def get_responses(self, json_responses) -> list:
-        responses = []
+    def add_apis(self, item):
+        api = APIModel()
+        api.id = self.api_id_counter
+        api.name = item.get('name')
+        if item.get('request').get('description', None) is not None:
+            api.description = item.get('request').get('description')
+        if item.get('request').get('body', None) is not None:
+            api.body = item.get('request').get('body').get('raw', None)
+        api.method = item.get('request').get('method')
+        api.url = item.get('request').get('url').get('raw')
+        api.examples = self.get_examples(api, item.get('response', []))
+        self.api_info.append(api)
+
+    def get_examples(self, api, json_responses) -> list:
+        examples = []
 
         for res in json_responses:
             self.response_id = self.response_id + 1
-            response = ResponseModel()
-            response.request_id = str(self.api_id_counter)
-            response.id = 'response_' + str(self.response_id)
-            response.name = res.get('name')
-            response.method = res.get('originalRequest').get('method')
+            api_example = APIExampleModel()
+            api_example.request_id = str(self.api_id_counter)
+            api_example.id = 'response_' + str(self.response_id)
+            api_example.name = res.get('name')
+            api_example.method = res.get('originalRequest').get('method')
+            api_example.request_body = '\n' + api.method + ' ' + api.url
             if res.get('originalRequest').get('body', None) is not None:
-                response.request_body = res.get('originalRequest').get('body').get('raw', None)
-            response.url = res.get('originalRequest').get('url').get('raw')
-            response.status = res.get('status')
-            response.code = res.get('code')
-            response.response_body = res.get('body')
-            responses.append(response)
+                api_example.request_body = api_example.request_body + '\n' + res.get('originalRequest').get('body').get('raw', None)
+            api_example.url = res.get('originalRequest').get('url').get('raw')
+            api_example.status = res.get('status')
+            api_example.code = res.get('code')
+            api_example.response_body = '\n' + res.get('body')
+            examples.append(api_example)
 
-        return responses
+        if len(examples) == 0:
+            self.response_id = self.response_id + 1
+            api_example = APIExampleModel()
+            api_example.request_id = str(self.api_id_counter)
+            api_example.id = 'response_' + str(self.response_id)
+            api_example.name = api.name
+            api_example.method = api.method
+            api_example.request_body = '\n' + api.method + ' ' + api.url
+            api_example.url = api.url
+            examples.append(api_example)
+
+        return examples
 
 
 d = DocumentGenerator()

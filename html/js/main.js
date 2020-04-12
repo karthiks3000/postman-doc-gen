@@ -52,6 +52,12 @@ jQuery(function ($) {
         $(".formatted-requests[data-request-id=" + requestId + "]").hide();
         $(".formatted-requests[data-id=" + dataId + "]").show();
     });
+    $('.is-expandable').click(function () {
+        var modal = $('.modal');
+        modal.find('.modal-header').find('.title').text('Sample');
+        modal.find('code').text($(this).text());
+        modal.show();
+    })
 });
 
 

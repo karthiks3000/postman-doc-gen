@@ -21,6 +21,25 @@
 
 <body>
     <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
@@ -93,7 +112,7 @@
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if api.body|length > 200 }}" data-title="BODY Raw">
                                               <code>
                                                 {{api.body|safe}}
                                               </code>
@@ -103,7 +122,7 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            {%- if api.responses|length > 0 %}
+                            {%- if api.examples|length > 0 %}
                             <div class="col-md-6 col-xs-12 examples">
                                 <div class="sample-request">
                                     <div class="heading">
@@ -112,44 +131,46 @@
                                     <div class="responses-index">
                                         <div class="dropdown response-name">
                                             <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span id="selected" class="response-name-label">{{api.examples[0].name}}</span>
                                               <span class="caret"></span>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                {%- for response in api.responses %}
-                                                <li class="truncate" data-request-info="{{response.request_id}}" data-response-info="{{response.id}}">{{response.name}}</li>
+                                                {%- for example in api.examples %}
+                                                <li class="truncate" data-request-info="{{example.request_id}}" data-response-info="{{example.id}}">{{example.name}}</li>
                                                 {%- endfor %}
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                {%- for response in api.responses %}
-                                <div class="formatted-requests" data-request-id="{{response.request_id}}"  data-id="{{response.id}}">
+                                {%- for example in api.examples %}
+                                <div class="formatted-requests {{ 'hide' if loop.index0 != 0 }}" data-request-id="{{example.request_id}}"  data-id="{{example.id}}">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted">{{response.request_body|safe}}</code>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.request_body|length > 200 }}" >
+                                                <code class="is-highlighted">{{example.request_body|safe}}</code>
                                             </pre>
                                         </div>
                                     </div>
+                                    {%- if example.response_body is defined %}
                                     <div class="sample-response">
                                         <div class="heading">
                                             <span>Example Response</span>
                                         </div>
                                         <div class="responses-index">
                                             <div class="response-status">
-                                                <span>{{response.code}} - {{response.status}}</span>
+                                                <span>{{example.code}} - {{example.status}}</span>
                                             </div>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{{response.response_body|safe}}</code>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.response_body|length > 200 }}" >
+                                                    <code class="is-highlighted">{{example.response_body|safe}}</code>
                                                 </pre>
                                             </div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 {%- endfor %}
                             </div>

@@ -21,6 +21,25 @@
 
 <body>
     <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
@@ -83,6 +102,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Summary Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="1" data-response-info="response_1">Summary Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="1"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -96,6 +145,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">First Phonological Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">First Phonological Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -109,6 +188,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">First Comprehension Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="3" data-response-info="response_3">First Comprehension Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -122,6 +231,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">WORD Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="4" data-response-info="response_4">WORD Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -135,6 +274,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Litpro Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="5" data-response-info="response_5">Litpro Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -148,6 +317,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Reading Readiness Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="6" data-response-info="response_6">Reading Readiness Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -161,6 +360,36 @@
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Interest Report</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">Interest Report</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -183,7 +412,7 @@ For teacher selected, tieBreaker must be null.</p>
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="BODY Raw">
                                               <code>
                                                 {
 	"name": "",
@@ -206,22 +435,24 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="responses-index">
                                         <div class="dropdown response-name">
                                             <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span id="selected" class="response-name-label">Create Group Set - Algo Selected</span>
                                               <span class="caret"></span>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="8" data-response-info="response_1">Create Group Set - Algo Selected</li>
-                                                <li class="truncate" data-request-info="8" data-response-info="response_2">Create Group Set - Teacher Selected</li>
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">Create Group Set - Algo Selected</li>
+                                                <li class="truncate" data-request-info="8" data-response-info="response_9">Create Group Set - Teacher Selected</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests" data-request-id="8"  data-id="response_1">
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted">{
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
+{
 	"name": "",
     "groupType": "LEXILE",
     "classId": {{CLASS_ID}},
@@ -241,8 +472,9 @@ For teacher selected, tieBreaker must be null.</p>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                    <code class="is-highlighted">
+{
     "id": 50,
     "name": "",
     "groupType": "LEXILE",
@@ -501,12 +733,15 @@ For teacher selected, tieBreaker must be null.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="formatted-requests" data-request-id="8"  data-id="response_2">
+                                <div class="formatted-requests hide" data-request-id="8"  data-id="response_9">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted">{
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <code class="is-highlighted">
+POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
+{
 	"name": "",
     "groupType": "TEACHER_SELECTED",
     "classId": {{CLASS_ID}},
@@ -534,8 +769,9 @@ For teacher selected, tieBreaker must be null.</p>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                    <code class="is-highlighted">
+{
     "id": 52,
     "name": "",
     "groupType": "TEACHER_SELECTED",
@@ -794,6 +1030,7 @@ For teacher selected, tieBreaker must be null.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             
@@ -812,7 +1049,7 @@ For teacher selected, tieBreaker must be null.</p>
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper  language-javascript" data-title="BODY Raw">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="BODY Raw">
                                               <code>
                                                 {
     "id": {{GROUP_SET_ID}},
@@ -832,6 +1069,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Save Group Set</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="9" data-response-info="response_10">Save Group Set</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="9"  data-id="response_10">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+PUT {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -845,6 +1112,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get A Group Set</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="10" data-response-info="response_11">Get A Group Set</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="10"  data-id="response_11">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -858,6 +1155,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Edit Group Set</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="11" data-response-info="response_12">Edit Group Set</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="11"  data-id="response_12">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -871,6 +1198,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Preview Group Set</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="12" data-response-info="response_13">Preview Group Set</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="12"  data-id="response_13">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -892,23 +1249,24 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="responses-index">
                                         <div class="dropdown response-name">
                                             <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                              <span id="selected" class="response-name-label">Select an Example</span>
+                                              <span id="selected" class="response-name-label">Get Class Group Sets - GRL + Interest</span>
                                               <span class="caret"></span>
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
-                                                <li class="truncate" data-request-info="13" data-response-info="response_3">Get Class Group Sets - GRL + Interest</li>
-                                                <li class="truncate" data-request-info="13" data-response-info="response_4">Get Class Group Sets - Teacher Selected</li>
-                                                <li class="truncate" data-request-info="13" data-response-info="response_5">Get Class Group Sets - Skill + Interest</li>
+                                                <li class="truncate" data-request-info="13" data-response-info="response_14">Get Class Group Sets - GRL + Interest</li>
+                                                <li class="truncate" data-request-info="13" data-response-info="response_15">Get Class Group Sets - Teacher Selected</li>
+                                                <li class="truncate" data-request-info="13" data-response-info="response_16">Get Class Group Sets - Skill + Interest</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="formatted-requests" data-request-id="13"  data-id="response_3">
+                                <div class="formatted-requests " data-request-id="13"  data-id="response_14">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted"></code>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -923,8 +1281,9 @@ For teacher selected, tieBreaker must be null.</p>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                    <code class="is-highlighted">
+{
     "results": [
         {
             "id": 173,
@@ -1181,12 +1540,14 @@ For teacher selected, tieBreaker must be null.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="formatted-requests" data-request-id="13"  data-id="response_4">
+                                <div class="formatted-requests hide" data-request-id="13"  data-id="response_15">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted"></code>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1201,8 +1562,9 @@ For teacher selected, tieBreaker must be null.</p>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                    <code class="is-highlighted">
+{
     "results": [
         {
             "id": 175,
@@ -1497,12 +1859,14 @@ For teacher selected, tieBreaker must be null.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="formatted-requests" data-request-id="13"  data-id="response_5">
+                                <div class="formatted-requests hide" data-request-id="13"  data-id="response_16">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                <code class="is-highlighted"></code>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1517,8 +1881,9 @@ For teacher selected, tieBreaker must be null.</p>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper" >
-                                                    <code class="is-highlighted">{
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                    <code class="is-highlighted">
+{
     "results": [
         {
             "id": 172,
@@ -1813,6 +2178,7 @@ For teacher selected, tieBreaker must be null.</p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             
@@ -1829,6 +2195,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Delete Group Set</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="14" data-response-info="response_17">Delete Group Set</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="14"  data-id="response_17">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+DELETE {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1842,6 +2238,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get classes</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="15" data-response-info="response_18">Get classes</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="15"  data-id="response_18">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1855,6 +2281,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/students</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get students</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="16" data-response-info="response_19">Get students</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="16"  data-id="response_19">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/students</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1868,6 +2324,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get Teacher Entitlements</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="17" data-response-info="response_20">Get Teacher Entitlements</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="17"  data-id="response_20">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1881,6 +2367,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get Class Entitlements</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="18" data-response-info="response_21">Get Class Entitlements</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="18"  data-id="response_21">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1894,6 +2410,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get Guided Reading Levels</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="19" data-response-info="response_22">Get Guided Reading Levels</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="19"  data-id="response_22">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row row-no-padding row-eq-height">
                             <div class="col-md-6 col-xs-12 section">
@@ -1907,6 +2453,36 @@ For teacher selected, tieBreaker must be null.</p>
                                     <div class="url">{{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get Independent Guided Reading Levels</span>
+                                              <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="20" data-response-info="response_23">Get Independent Guided Reading Levels</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="20"  data-id="response_23">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                                <code class="is-highlighted">
+GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </article>
                 </div>
