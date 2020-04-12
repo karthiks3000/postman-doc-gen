@@ -27,7 +27,7 @@
             <div class="title">Example Response</div>
             <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
               <div>
-              <span aria-hidden="true">×</span>
+              <span id="closeModal" aria-hidden="true">×</span>
               </div>
             </button>
           </div>
@@ -123,7 +123,7 @@
                                 <div class="formatted-requests " data-request-id="1"  data-id="response_1">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Summary Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -166,7 +166,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?gr
                                 <div class="formatted-requests " data-request-id="2"  data-id="response_2">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="First Phonological Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -209,7 +209,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phon
                                 <div class="formatted-requests " data-request-id="3"  data-id="response_3">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="First Comprehension Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -252,7 +252,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comp
                                 <div class="formatted-requests " data-request-id="4"  data-id="response_4">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="WORD Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -295,7 +295,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group
                                 <div class="formatted-requests " data-request-id="5"  data-id="response_5">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Litpro Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -338,7 +338,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?gro
                                 <div class="formatted-requests " data-request-id="6"  data-id="response_6">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Reading Readiness Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -381,7 +381,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?gr
                                 <div class="formatted-requests " data-request-id="7"  data-id="response_7">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Interest Report">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</code>
                                             </pre>
@@ -412,7 +412,7 @@ For teacher selected, tieBreaker must be null.</p>
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="BODY Raw">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="Create Group Set">
                                               <code>
                                                 {
 	"name": "",
@@ -449,7 +449,7 @@ For teacher selected, tieBreaker must be null.</p>
                                 <div class="formatted-requests " data-request-id="8"  data-id="response_8">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Create Group Set - Algo Selected">
                                                 <code class="is-highlighted">
 POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
 {
@@ -472,7 +472,7 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Create Group Set - Algo Selected">
                                                     <code class="is-highlighted">
 {
     "id": 50,
@@ -738,7 +738,7 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                 <div class="formatted-requests hide" data-request-id="8"  data-id="response_9">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Create Group Set - Teacher Selected">
                                                 <code class="is-highlighted">
 POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
 {
@@ -769,7 +769,7 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Create Group Set - Teacher Selected">
                                                     <code class="is-highlighted">
 {
     "id": 52,
@@ -1049,7 +1049,7 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="BODY Raw">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Save Group Set">
                                               <code>
                                                 {
     "id": {{GROUP_SET_ID}},
@@ -1090,7 +1090,7 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                 <div class="formatted-requests " data-request-id="9"  data-id="response_10">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Save Group Set">
                                                 <code class="is-highlighted">
 PUT {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                             </pre>
@@ -1133,7 +1133,7 @@ PUT {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                 <div class="formatted-requests " data-request-id="10"  data-id="response_11">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get A Group Set">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                             </pre>
@@ -1176,7 +1176,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                 <div class="formatted-requests " data-request-id="11"  data-id="response_12">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Edit Group Set">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</code>
                                             </pre>
@@ -1219,7 +1219,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</code>
                                 <div class="formatted-requests " data-request-id="12"  data-id="response_13">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Preview Group Set">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</code>
                                             </pre>
@@ -1264,7 +1264,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</code>
                                 <div class="formatted-requests " data-request-id="13"  data-id="response_14">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - GRL + Interest">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
@@ -1281,7 +1281,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Get Class Group Sets - GRL + Interest">
                                                     <code class="is-highlighted">
 {
     "results": [
@@ -1545,7 +1545,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                 <div class="formatted-requests hide" data-request-id="13"  data-id="response_15">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - Teacher Selected">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
@@ -1562,7 +1562,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Get Class Group Sets - Teacher Selected">
                                                     <code class="is-highlighted">
 {
     "results": [
@@ -1864,7 +1864,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                 <div class="formatted-requests hide" data-request-id="13"  data-id="response_16">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - Skill + Interest">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                             </pre>
@@ -1881,7 +1881,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" >
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Get Class Group Sets - Skill + Interest">
                                                     <code class="is-highlighted">
 {
     "results": [
@@ -2216,7 +2216,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                 <div class="formatted-requests " data-request-id="14"  data-id="response_17">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Delete Group Set">
                                                 <code class="is-highlighted">
 DELETE {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                             </pre>
@@ -2259,7 +2259,7 @@ DELETE {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                 <div class="formatted-requests " data-request-id="15"  data-id="response_18">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get classes">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes</code>
                                             </pre>
@@ -2302,7 +2302,7 @@ GET {{HOST}}/classes</code>
                                 <div class="formatted-requests " data-request-id="16"  data-id="response_19">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get students">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/students</code>
                                             </pre>
@@ -2345,7 +2345,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/students</code>
                                 <div class="formatted-requests " data-request-id="17"  data-id="response_20">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Teacher Entitlements">
                                                 <code class="is-highlighted">
 GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</code>
                                             </pre>
@@ -2388,7 +2388,7 @@ GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</code>
                                 <div class="formatted-requests " data-request-id="18"  data-id="response_21">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Entitlements">
                                                 <code class="is-highlighted">
 GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</code>
                                             </pre>
@@ -2431,7 +2431,7 @@ GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID
                                 <div class="formatted-requests " data-request-id="19"  data-id="response_22">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Guided Reading Levels">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</code>
                                             </pre>
@@ -2474,7 +2474,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</code>
                                 <div class="formatted-requests " data-request-id="20"  data-id="response_23">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " >
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Independent Guided Reading Levels">
                                                 <code class="is-highlighted">
 GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</code>
                                             </pre>

@@ -52,11 +52,21 @@ jQuery(function ($) {
         $(".formatted-requests[data-request-id=" + requestId + "]").hide();
         $(".formatted-requests[data-id=" + dataId + "]").show();
     });
+
     $('.is-expandable').click(function () {
-        var modal = $('.modal');
-        modal.find('.modal-header').find('.title').text('Sample');
-        modal.find('code').text($(this).text());
+        var modal = $('#snippetModal');
+        var current = $(this);
+        $("#snippetModal .modal-header .title").empty().text(current.data('title'));
+
+        $("#snippetModal code").text($(this).text());
+        modal.toggle('.modal-open');
         modal.show();
+    })
+
+    $('.close').click(function () {
+        var modal = $('#snippetModal');
+        modal.toggle('.modal-open');
+        modal.hide();
     })
 });
 
