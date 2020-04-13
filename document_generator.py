@@ -3,7 +3,9 @@ import json
 from collections import OrderedDict
 from models import APIExampleModel, APIModel, APICollectionModel
 from jinja2 import Environment, FileSystemLoader
-from fastjsonschema import validate, JsonSchemaDefinitionException
+from fastjsonschema import validate
+import constants
+import argparse
 
 
 class DocumentGenerator():
@@ -12,33 +14,32 @@ class DocumentGenerator():
     api_collection: APICollectionModel
     api_id_counter: int
     response_id: int
+    env_file = None
 
     def __init__(self):
         super().__init__()
     
-    def generate_doc(self):
+    def generate_doc(self, collection_file_name, environment_file_name=None):
         root = os.path.dirname(os.path.abspath(__file__))
-        templates_dir = os.path.join(root, 'templates')
-        env = Environment(loader=FileSystemLoader(templates_dir))
-        template = env.get_template('index.html')
-
-        json_collection = DocumentGenerator.validate_collection('postman_collection.json')
+        templates_dir = os.path.join(root, constants.TEMPLATES_DIR)
+        template = self.get_template(templates_dir)
+        
+        json_collection = self.validate_collection(collection_file_name)
+        if environment_file_name is not None:
+            self.env_file = self.get_json_file(environment_file_name)
 
         self.api_collection = APICollectionModel()
 
-        self.api_collection.name = json_collection['info']['name']
-        self.api_collection.description = json_collection['info']['description']
-        self.api_collection.schema = json_collection['info']['schema']
+        self.api_collection.name = json_collection[constants.INFO][constants.NAME]
+        self.api_collection.description = json_collection[constants.INFO][constants.DESCRIPTION]
+        self.api_collection.schema = json_collection[constants.INFO][constants.SCHEMA]
 
         self.side_tree = []
         self.api_id_counter = 0
         self.response_id = 0
         self.add_items(self.side_tree, json_collection)
 
-        # print(json.dumps(self.side_tree, indent=4))
-        # print(self.api_collection.toJSON())
-
-        filename = os.path.join(root, 'html', 'index.html')
+        filename = os.path.join(root, constants.RESULT_DIR, constants.RESULT_FILE_NAME)
 
         with open(filename, 'w') as fh:
             fh.write(template.render(
@@ -48,88 +49,155 @@ class DocumentGenerator():
             ))
 
     @staticmethod
+    def get_template(templates_dir):
+        env = Environment(loader=FileSystemLoader(templates_dir))
+        return env.get_template(constants.TEMPLATE_FILE_NAME)
+
+    @staticmethod
+    def get_json_file(file_name):
+        with open(file_name) as f:
+            json_file = json.load(f)
+        return json_file
+
+    @staticmethod
     def validate_collection(file_name) -> json:
         root = os.path.dirname(os.path.abspath(__file__))
-        postman_filename = os.path.join(root, file_name)
-        schema_filename = os.path.join(root, 'schemas', 'schema_2_1_0.json')
+        schema_filename = os.path.join(root, constants.POSTMAN_SCHEMA_DIR, constants.POSTMAN_JSON_SCHEMA)
 
-        with open(postman_filename) as f:
-            json_collection = json.load(f)
+        json_collection = DocumentGenerator.get_json_file(file_name)
 
-        with open(schema_filename) as f:
-            json_schema = json.load(f)
+        json_schema = DocumentGenerator.get_json_file(schema_filename)
 
         validate(json_schema, json_collection)
         return json_collection
 
+    @staticmethod
+    def escape_string(value):
+        return value.replace('\"', '\\"')
+
+    @staticmethod
+    def apply_env_values(json_collection, json_env):
+        if json_env is None:
+            return json_collection
+        collection_string = json.dumps(json_collection)
+
+        for item in json_env['values']:
+            key = '{{' + str(item['key']) + '}}'
+            value = DocumentGenerator.escape_string(str(item['value']))
+
+            collection_string = collection_string.replace(key, value)
+
+        return json.loads(collection_string)
+
+    @staticmethod
+    def apply_env_values_string(string_value, json_env):
+        if json_env is None:
+            return string_value
+
+        for item in json_env['values']:
+            key = '{{' + str(item['key']) + '}}'
+            value = DocumentGenerator.escape_string(str(item['value']))
+
+            string_value = string_value.replace(key, value)
+
+        return string_value
+
     def add_items(self, tree, json_node):
         for item in json_node['item']:
             if item.get('item', None) is not None:
-                node = {}
-                node['text'] = item.get('name', '[Name Missing]')
+                node = dict()
+                node['text'] = item.get(constants.NAME, constants.NOT_FOUND)
                 subnodes = []
                 self.add_items(subnodes, item)
                 node['nodes'] = subnodes
-                node['icon'] = 'fas fa-folder'
+                node['icon'] = constants.FOLDER_ICON
                 node['selectable'] = 'false'
                 tree.append(node)
 
             else:
                 self.api_id_counter = self.api_id_counter + 1
-                node = {}
-                node['text'] = item.get('name', '[Name Missing]')
+                node = dict()
+                node['text'] = item.get(constants.NAME, constants.NOT_FOUND)
                 node['href'] = '#' + str(self.api_id_counter)
-                node['method'] = item.get('request').get('method', 'None')
+                node[constants.METHOD] = item.get(constants.REQUEST).get(constants.METHOD, 'None')
                 tree.append(node)
                 self.add_apis(item)
 
     def add_apis(self, item):
         api = APIModel()
         api.id = self.api_id_counter
-        api.name = item.get('name', '[Name Missing]')
-        if item.get('request').get('description', None) is not None:
-            api.description = item.get('request').get('description')
-        if item.get('request').get('body', None) is not None:
-            api.body = item.get('request').get('body').get('raw', None)
-        api.method = item.get('request').get('method')
-        if item.get('request').get('url', None) is not None:
-            api.url = item.get('request').get('url').get('raw')
-        api.examples = self.get_examples(api, item.get('response', []))
+        api.name = item.get(constants.NAME, constants.NOT_FOUND)
+        if item.get(constants.REQUEST).get(constants.DESCRIPTION, None) is not None:
+            api.description = item.get(constants.REQUEST).get(constants.DESCRIPTION)
+        if item.get(constants.REQUEST).get(constants.BODY, None) is not None:
+            api.body = item.get(constants.REQUEST).get(constants.BODY).get(constants.RAW, None)
+        api.method = item.get(constants.REQUEST).get(constants.METHOD)
+        if item.get(constants.REQUEST).get(constants.URL, None) is not None:
+            api.url = item.get(constants.REQUEST).get(constants.URL).get(constants.RAW)
+        api.examples = self.get_examples(api, item.get(constants.RESPONSE, []))
         self.api_info.append(api)
 
     def get_examples(self, api, json_responses) -> list:
         examples = []
+
+        if self.env_file is not None:
+            json_responses = self.apply_env_values(json_responses, self.env_file)
 
         for res in json_responses:
             self.response_id = self.response_id + 1
             api_example = APIExampleModel()
             api_example.request_id = str(self.api_id_counter)
             api_example.id = 'response_' + str(self.response_id)
-            api_example.name = res.get('name', '[Name Missing]')
-            api_example.method = res.get('originalRequest').get('method')
-            if api.url is not None:
-                api_example.request_body = '\n' + api.method + ' ' + api.url
-            if res.get('originalRequest').get('body', None) is not None:
-                api_example.request_body = api_example.request_body + '\n' + res.get('originalRequest').get('body').get('raw', None)
-            api_example.url = res.get('originalRequest').get('url').get('raw')
-            api_example.status = res.get('status')
-            api_example.code = res.get('code')
-            api_example.response_body = '\n' + res.get('body', '')
+            api_example.name = res.get(constants.NAME, constants.NOT_FOUND)
+            api_example.method = res.get(constants.ORIGINAL_REQUEST).get(constants.METHOD)
+            api_example.url = res.get(constants.ORIGINAL_REQUEST).get(constants.URL).get(constants.RAW)
+            if api_example.url is not None:
+                api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
+            if res.get(constants.ORIGINAL_REQUEST).get(constants.BODY, None) is not None:
+                api_example.request_body = api_example.request_body + '\n' + res.get(constants.ORIGINAL_REQUEST).get(constants.BODY).get(constants.RAW, None)
+
+            api_example.status = res.get(constants.STATUS)
+            api_example.code = res.get(constants.CODE)
+            api_example.response_body = '\n' + res.get(constants.BODY, '')
             examples.append(api_example)
 
         if len(examples) == 0:
+
             self.response_id = self.response_id + 1
             api_example = APIExampleModel()
             api_example.request_id = str(self.api_id_counter)
             api_example.id = 'response_' + str(self.response_id)
             api_example.name = api.name
             api_example.method = api.method
-            api_example.request_body = '\n' + api.method + ' ' + api.url
-            api_example.url = api.url
+            if api.url is not None:
+                api_example.url = self.apply_env_values_string(api.url, self.env_file)
+
+            if api_example.url is not None:
+                api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
+            if api.body is not None:
+                api_example.request_body = api_example.request_body + self.apply_env_values(api.body, self.env_file)
             examples.append(api_example)
 
         return examples
 
 
-d = DocumentGenerator()
-d.generate_doc()
+def init_argparse() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        usage="%(prog)s [COLLECTION FILE PATH]",
+        description="Generates an HTML document from a Postman collection. Applies environment values if provided."
+    )
+    parser.add_argument(
+        "-v", "--version", action="version",
+        version=f"{parser.prog} Version 1.0.0"
+    )
+    parser.add_argument('collection', help='The Postman collection json')
+    parser.add_argument('-e', '--env', help='The Postman environment json')
+
+    return parser
+
+
+if __name__ == '__main__':
+    parser = init_argparse()
+    args = parser.parse_args()
+    d = DocumentGenerator()
+    d.generate_doc(args.collection, args.env)

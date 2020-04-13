@@ -45,17 +45,6 @@
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand text-white font-weight-bold">Documentation</div>
                 <!-- sidebar-header  -->
-                <!-- sidebar-search  -->
-                <div class="sidebar-item sidebar-search">
-                    <div>
-                        <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="Search...">
-                            <div class="input-group-append"> <span class="input-group-text">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span> </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
                     <div id="tree"></div>
@@ -126,7 +115,7 @@
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Summary Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/summary?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -170,7 +159,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/summary?gr
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="First Phonological Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phonological?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/first-phonological?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -214,7 +203,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-phon
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="First Comprehension Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comprehension?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/first-comprehension?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -258,7 +247,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/first-comp
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="WORD Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/word?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -302,7 +291,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/word?group
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Litpro Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/litpro?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -346,7 +335,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/litpro?gro
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Reading Readiness Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/reading?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -390,7 +379,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/reading?gr
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Interest Report">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/reports/interests?group-id={{GROUP_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/reports/interests?group-id=1974</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -459,11 +448,11 @@ For teacher selected, tieBreaker must be null.</p>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Create Group Set - Algo Selected">
                                                 <code class="is-highlighted">
-POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
+POST https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets?num-groups=2
 {
 	"name": "",
     "groupType": "LEXILE",
-    "classId": {{CLASS_ID}},
+    "classId": 84057,
     "tieBreaker": "SKILL"
 }</code>
                                             </pre>
@@ -748,11 +737,11 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Create Group Set - Teacher Selected">
                                                 <code class="is-highlighted">
-POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
+POST https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets?num-groups=2
 {
 	"name": "",
     "groupType": "TEACHER_SELECTED",
-    "classId": {{CLASS_ID}},
+    "classId": 84057,
     "tieBreaker": null,
     "groups": [
     	{
@@ -1099,9 +1088,19 @@ POST {{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=4
                                 <div class="formatted-requests " data-request-id="9"  data-id="response_10">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Save Group Set">
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Save Group Set">
                                                 <code class="is-highlighted">
-PUT {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+PUT https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701{
+    "id": 701,
+    "name": "Group Set 6: TEACHER_SELECTED",
+    "groupType": "LEXILE",
+    "classId": 84057,
+    "draft": false,
+    "newDataIsAvailable": false,
+    "tieBreaker": "SKILL",
+    "levelingType": "LEXILE",
+    "groups": [{"id":1970,"name":"Group 4","readingLevel":null,"createdBy":"216569","createdOn":"2020-04-09T19:36:01.541742Z","updatedBy":null,"updatedOn":null,"studentIds":["220791","216648","221085","221084","216639"],"interests":[],"skills":[],"roster":false,"changed":true},{"id":1971,"name":"Student Roster","readingLevel":null,"createdBy":"216569","createdOn":"2020-04-09T19:36:01.541759Z","updatedBy":null,"updatedOn":null,"studentIds":[],"interests":[],"skills":[],"roster":true,"changed":true},{"id":1972,"name":"Group 3","readingLevel":null,"createdBy":"216569","createdOn":"2020-04-09T19:36:01.541754Z","updatedBy":null,"updatedOn":null,"studentIds":["216644","216636","216637","216635","216638"],"interests":[],"skills":[],"roster":false,"changed":true},{"id":1973,"name":"Group 1","readingLevel":null,"createdBy":"216569","createdOn":"2020-04-09T19:36:01.541720Z","updatedBy":null,"updatedOn":null,"studentIds":["216930","216642","216643","216640","216641"],"interests":[],"skills":[],"roster":false,"changed":true},{"id":1974,"name":"Group 2","readingLevel":null,"createdBy":"216569","createdOn":"2020-04-09T19:36:01.541711Z","updatedBy":null,"updatedOn":null,"studentIds":["220116","216645","216963","216647","216646"],"interests":[],"skills":[],"roster":false,"changed":true}]
+}</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1145,7 +1144,7 @@ PUT {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get A Group Set">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1189,7 +1188,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Edit Group Set">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/edit</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1233,7 +1232,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/edit</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Preview Group Set">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701/preview</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1279,7 +1278,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}/preview</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - GRL + Interest">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1560,7 +1559,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - Teacher Selected">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -1879,7 +1878,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Group Sets - Skill + Interest">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2232,7 +2231,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/group-sets</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Delete Group Set">
                                                 <code class="is-highlighted">
-DELETE {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
+DELETE https://cpd-service.dev.apps.scholastic.tech/classes/84057/group-sets/701</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2276,7 +2275,7 @@ DELETE {{HOST}}/classes/{{CLASS_ID}}/group-sets/{{GROUP_SET_ID}}</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get classes">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2320,7 +2319,7 @@ GET {{HOST}}/classes</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get students">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/students</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/students</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2364,7 +2363,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/students</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Teacher Entitlements">
                                                 <code class="is-highlighted">
-GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</code>
+GET https://cpd-service.dev.apps.scholastic.tech/sdm/proxy/composite/staff/216569/entitlements</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2408,7 +2407,7 @@ GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/entitlements</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Class Entitlements">
                                                 <code class="is-highlighted">
-GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID}}/entitlements</code>
+GET https://cpd-service.dev.apps.scholastic.tech/sdm/proxy/composite/staff/216569/roster/sections/84057/entitlements</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2452,7 +2451,7 @@ GET {{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/roster/sections/{{CLASS_ID
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Guided Reading Levels">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/reading-levels/guided-reading-levels</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -2496,7 +2495,7 @@ GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/guided-reading-levels</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Independent Guided Reading Levels">
                                                 <code class="is-highlighted">
-GET {{HOST}}/classes/{{CLASS_ID}}/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</code>
+GET https://cpd-service.dev.apps.scholastic.tech/classes/84057/reading-levels/independent-guided-reading-levels?startDate=2020-04-06&endDate=</code>
                                             </pre>
                                         </div>
                                     </div>
