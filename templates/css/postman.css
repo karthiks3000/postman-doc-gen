@@ -39,7 +39,7 @@ body #doc-body:not(.is-loading) {
 .api-information .heading .name {
     word-break: break-word;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 0.9rem;
     color: #282828;
 }
 .api-information .heading .method {
@@ -270,7 +270,7 @@ body :not(pre) > code[class*="language-"], body pre[class*="language-"], body .c
     line-height: 1.5;
     background: #272822;
     overflow-y: hidden;
-    max-height: 200px
+    max-height: 220px
 }
 
 .click-to-expand-wrapper.is-snippet-wrapper.is-expandable:after {

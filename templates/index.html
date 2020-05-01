@@ -10,7 +10,7 @@
     <!-- using online links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- using local links -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sidebar-themes.css">
@@ -43,7 +43,7 @@
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
-                <div class="sidebar-item sidebar-brand text-white font-weight-bold">Documentation</div>
+                <div class="sidebar-item sidebar-brand text-white font-weight-bold">API Documentation</div>
                 <!-- sidebar-header  -->
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
@@ -103,7 +103,7 @@
                                         <div class="body-heading">BODY <span class="body-type">raw</span></div>
                                         <hr>
                                         <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if api.body|length > 200 }}" data-title="{{api.name}}">
+                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if api.body|length > 130 }}" data-title="{{api.name}}">
                                               <code>
                                                 {{api.body|safe}}
                                               </code>
@@ -121,9 +121,10 @@
                                     </div>
                                     <div class="responses-index">
                                         <div class="dropdown response-name">
-                                            <button class="btn dropdown-toggle responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <button class="btn {{'dropdown-toggle' if api.examples|length > 1 }}  responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                               <span id="selected" class="response-name-label">{{api.examples[0].name}}</span>
-                                              <span class="caret"></span>
+                                                <span class="caret"></span>
+
                                             </button>
 
                                             <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
@@ -138,7 +139,7 @@
                                 <div class="formatted-requests {{ 'hide' if loop.index0 != 0 }}" data-request-id="{{example.request_id}}"  data-id="{{example.id}}">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.request_body|length > 200 }}" data-title="{{example.name}}">
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.request_body|length > 180 }}" data-title="{{example.name}}">
                                                 <code class="is-highlighted">{{example.request_body|safe}}</code>
                                             </pre>
                                         </div>
@@ -155,7 +156,7 @@
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.response_body|length > 200 }}" data-title="{{example.name}}">
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.response_body|length > 180 }}" data-title="{{example.name}}">
                                                     <code class="is-highlighted">{{example.response_body|safe}}</code>
                                                 </pre>
                                             </div>
@@ -181,12 +182,11 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
-    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/bootstrap-treeview.js"></script>
     <script src="js/main.js"></script>
     <script type="application/javascript">
         var data = {{ side_tree|safe }}
-        console.log(data);
         $('#tree').treeview({
             data: data,
             levels: 10,

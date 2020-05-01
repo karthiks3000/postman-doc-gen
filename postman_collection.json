@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9a4a6d69-594b-48ef-8249-698be48d3f80",
+		"_postman_id": "d08c1f1b-2484-4b06-bc9f-2aa5f7304f7a",
 		"name": "CPD",
 		"description": "APIs for Cross Product Dashboard",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -313,12 +313,38 @@
 									"    pm.environment.set(\"LEVELING_TYPE\", JSON.stringify(jsonData.levelingType));",
 									"",
 									"    var groups = jsonData.groups;",
+									"    var interests = [",
+									"                {",
+									"                    \"interestShortName\": \"emergency\",",
+									"                    \"interestName\": \"Emergency!\"",
+									"                },",
+									"                {",
+									"                    \"interestShortName\": \"health_and_fitness\",",
+									"                    \"interestName\": \"Health & Fitness\"",
+									"                },",
+									"                {",
+									"                    \"interestShortName\": \"favorite_classics\",",
+									"                    \"interestName\": \"Favorite Classics\"",
+									"                }",
+									"            ];",
+									"    var skills = [",
+									"                {",
+									"                    \"skillShortName\": \"mega-clusters\",",
+									"                    \"skillName\": \"Mega Clusters\",",
+									"                    \"correctAttempts\": 12.5,",
+									"                    \"totalAttempts\": 18.0,",
+									"                    \"skillAvg\": 0.6944444444444444",
+									"                }",
+									"            ];",
 									"    ",
 									"    for(var i=0; i< groups.length; i++) {",
 									"        if(groups[i].name != 'Student Roster'){",
 									"            pm.environment.set(\"GROUP_ID\", groups[i].id);",
+									"            groups[i].interests = interests;",
+									"            groups[i].skills = skills;",
 									"        }",
 									"        groups[i].changed = true;",
+									"        ",
 									"    }",
 									"    pm.environment.set(\"GROUPS\", JSON.stringify(groups));",
 									"});"
@@ -339,7 +365,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
+							"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"INTEREST\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -366,101 +392,6 @@
 						"description": "Acceptable values for groupType and tieBreaker are - \nTEACHER_SELECTED, GRL, LEXILE, SKILL, INTEREST\n\nFor teacher selected, tieBreaker must be null."
 					},
 					"response": [
-						{
-							"name": "Create Group Set - Algo Selected",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2",
-									"host": [
-										"{{HOST}}"
-									],
-									"path": [
-										"classes",
-										"{{CLASS_ID}}",
-										"group-sets"
-									],
-									"query": [
-										{
-											"key": "num-groups",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Wed, 18 Mar 2020 14:53:22 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json;charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "UISESSION=71EF6BE8656D5CAE9533F3AF4C17A9D9; Max-Age=1; Expires=Wed, 18-Mar-2020 14:53:23 GMT; Path=/; Secure; HttpOnly"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 50,\n    \"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": 84057,\n    \"draft\": true,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": \"SKILL\",\n    \"levelingType\": \"LEXILE\",\n    \"createdBy\": \"216569\",\n    \"createdOn\": \"2020-03-18T14:53:22.480409Z\",\n    \"updatedBy\": null,\n    \"updatedOn\": null,\n    \"groups\": [\n        {\n            \"id\": 61,\n            \"name\": \"Student Roster\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524445Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [\n                \"216640\",\n                \"220116\",\n                \"216639\",\n                \"216638\",\n                \"216646\",\n                \"216645\",\n                \"216637\",\n                \"216648\",\n                \"216636\",\n                \"216647\",\n                \"216642\",\n                \"216641\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216643\"\n            ],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": true,\n            \"changed\": false\n        },\n        {\n            \"id\": 62,\n            \"name\": \"Group 2\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524436Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        },\n        {\n            \"id\": 63,\n            \"name\": \"Group 1\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524442Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        }\n    ],\n    \"studentIds\": [\n        \"216643\",\n        \"216644\",\n        \"216930\",\n        \"216963\",\n        \"216641\",\n        \"216642\",\n        \"216640\",\n        \"220116\",\n        \"216638\",\n        \"216639\",\n        \"216636\",\n        \"216647\",\n        \"216637\",\n        \"216648\",\n        \"216645\",\n        \"216646\"\n    ],\n    \"groupStudents\": [\n        {\n            \"studentId\": \"216648\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216639\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216643\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"220116\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": [\n                {\n                    \"skillShortName\": \"antonyms\",\n                    \"skillName\": \"Antonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                },\n                {\n                    \"skillShortName\": \"synonyms\",\n                    \"skillName\": \"Synonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                }\n            ]\n        },\n        {\n            \"studentId\": \"216638\",\n            \"readingLevel\": \"111\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2019-12-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216930\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216644\",\n            \"readingLevel\": \"111\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-30T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216642\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216641\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [\n                {\n                    \"interestShortName\": \"biographies_and_autobiographies\",\n                    \"interestName\": \"Biographies & Autobiographies\"\n                },\n                {\n                    \"interestShortName\": \"science_and_technology\",\n                    \"interestName\": \"Science & Technology\"\n                },\n                {\n                    \"interestShortName\": \"nature_and_the_environment\",\n                    \"interestName\": \"Nature & the Environment\"\n                },\n                {\n                    \"interestShortName\": \"animals_and_pets\",\n                    \"interestName\": \"Animals & Pets\"\n                }\n            ],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216645\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216636\",\n            \"readingLevel\": \"250\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-30T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216963\",\n            \"readingLevel\": \"110\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216637\",\n            \"readingLevel\": \"300\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2019-11-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216640\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216646\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216647\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        }\n    ]\n}"
-						},
 						{
 							"name": "Create Group Set - Teacher Selected",
 							"originalRequest": {
@@ -555,6 +486,101 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": 52,\n    \"name\": \"\",\n    \"groupType\": \"TEACHER_SELECTED\",\n    \"classId\": 84057,\n    \"draft\": true,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": null,\n    \"levelingType\": \"GRL\",\n    \"createdBy\": \"216569\",\n    \"createdOn\": \"2020-03-18T14:55:25.800383Z\",\n    \"updatedBy\": null,\n    \"updatedOn\": null,\n    \"groups\": [\n        {\n            \"id\": 65,\n            \"name\": \"Group 2\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:55:25.858580Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        },\n        {\n            \"id\": 66,\n            \"name\": \"Student Roster\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:55:25.858588Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [\n                \"216646\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216638\",\n                \"216642\",\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216645\",\n                \"220116\",\n                \"216640\",\n                \"216641\",\n                \"216639\"\n            ],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": true,\n            \"changed\": false\n        },\n        {\n            \"id\": 67,\n            \"name\": \"Group 1\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:55:25.858586Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        }\n    ],\n    \"studentIds\": [\n        \"216643\",\n        \"216644\",\n        \"216930\",\n        \"216963\",\n        \"216641\",\n        \"216642\",\n        \"216640\",\n        \"220116\",\n        \"216638\",\n        \"216639\",\n        \"216636\",\n        \"216647\",\n        \"216637\",\n        \"216648\",\n        \"216645\",\n        \"216646\"\n    ],\n    \"groupStudents\": [\n        {\n            \"studentId\": \"216643\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216639\",\n            \"readingLevel\": \"B\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-01-08T18:20:14Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216638\",\n            \"readingLevel\": \"B\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2019-12-04T20:50:20Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216930\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216963\",\n            \"readingLevel\": \"J\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216645\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216647\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216648\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216636\",\n            \"readingLevel\": \"E\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-02-21T16:34:15Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216641\",\n            \"readingLevel\": \"M\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-02-21T16:35:16Z\",\n            \"interests\": [\n                {\n                    \"interestShortName\": \"biographies_and_autobiographies\",\n                    \"interestName\": \"Biographies & Autobiographies\"\n                },\n                {\n                    \"interestShortName\": \"science_and_technology\",\n                    \"interestName\": \"Science & Technology\"\n                },\n                {\n                    \"interestShortName\": \"nature_and_the_environment\",\n                    \"interestName\": \"Nature & the Environment\"\n                },\n                {\n                    \"interestShortName\": \"animals_and_pets\",\n                    \"interestName\": \"Animals & Pets\"\n                }\n            ],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216640\",\n            \"readingLevel\": \"B\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2019-12-04T20:50:39Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216637\",\n            \"readingLevel\": \"A\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-01-07T20:24:31Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216644\",\n            \"readingLevel\": \"B\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-01-29T19:58:36Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"220116\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": [\n                {\n                    \"skillShortName\": \"antonyms\",\n                    \"skillName\": \"Antonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                },\n                {\n                    \"skillShortName\": \"synonyms\",\n                    \"skillName\": \"Synonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                }\n            ]\n        },\n        {\n            \"studentId\": \"216642\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216646\",\n            \"readingLevel\": \"B\",\n            \"readingLevelSource\": \"nsgra\",\n            \"readingLevelDateAssessed\": \"2020-01-07T20:24:18Z\",\n            \"interests\": [],\n            \"skills\": []\n        }\n    ]\n}"
+						},
+						{
+							"name": "Create Group Set - Algo Selected",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": {{CLASS_ID}},\n    \"tieBreaker\": \"SKILL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/classes/{{CLASS_ID}}/group-sets?num-groups=2",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"classes",
+										"{{CLASS_ID}}",
+										"group-sets"
+									],
+									"query": [
+										{
+											"key": "num-groups",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 14:53:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "UISESSION=71EF6BE8656D5CAE9533F3AF4C17A9D9; Max-Age=1; Expires=Wed, 18-Mar-2020 14:53:23 GMT; Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 50,\n    \"name\": \"\",\n    \"groupType\": \"LEXILE\",\n    \"classId\": 84057,\n    \"draft\": true,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": \"SKILL\",\n    \"levelingType\": \"LEXILE\",\n    \"createdBy\": \"216569\",\n    \"createdOn\": \"2020-03-18T14:53:22.480409Z\",\n    \"updatedBy\": null,\n    \"updatedOn\": null,\n    \"groups\": [\n        {\n            \"id\": 61,\n            \"name\": \"Student Roster\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524445Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [\n                \"216640\",\n                \"220116\",\n                \"216639\",\n                \"216638\",\n                \"216646\",\n                \"216645\",\n                \"216637\",\n                \"216648\",\n                \"216636\",\n                \"216647\",\n                \"216642\",\n                \"216641\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216643\"\n            ],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": true,\n            \"changed\": false\n        },\n        {\n            \"id\": 62,\n            \"name\": \"Group 2\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524436Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        },\n        {\n            \"id\": 63,\n            \"name\": \"Group 1\",\n            \"readingLevel\": null,\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-18T14:53:22.524442Z\",\n            \"updatedBy\": null,\n            \"updatedOn\": null,\n            \"studentIds\": [],\n            \"interests\": [],\n            \"skills\": [],\n            \"roster\": false,\n            \"changed\": false\n        }\n    ],\n    \"studentIds\": [\n        \"216643\",\n        \"216644\",\n        \"216930\",\n        \"216963\",\n        \"216641\",\n        \"216642\",\n        \"216640\",\n        \"220116\",\n        \"216638\",\n        \"216639\",\n        \"216636\",\n        \"216647\",\n        \"216637\",\n        \"216648\",\n        \"216645\",\n        \"216646\"\n    ],\n    \"groupStudents\": [\n        {\n            \"studentId\": \"216648\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216639\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216643\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"220116\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": [\n                {\n                    \"skillShortName\": \"antonyms\",\n                    \"skillName\": \"Antonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                },\n                {\n                    \"skillShortName\": \"synonyms\",\n                    \"skillName\": \"Synonyms\",\n                    \"correctAttempts\": 7,\n                    \"totalAttempts\": 7,\n                    \"skillAvg\": 1\n                }\n            ]\n        },\n        {\n            \"studentId\": \"216638\",\n            \"readingLevel\": \"111\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2019-12-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216930\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216644\",\n            \"readingLevel\": \"111\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-30T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216642\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216641\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [\n                {\n                    \"interestShortName\": \"biographies_and_autobiographies\",\n                    \"interestName\": \"Biographies & Autobiographies\"\n                },\n                {\n                    \"interestShortName\": \"science_and_technology\",\n                    \"interestName\": \"Science & Technology\"\n                },\n                {\n                    \"interestShortName\": \"nature_and_the_environment\",\n                    \"interestName\": \"Nature & the Environment\"\n                },\n                {\n                    \"interestShortName\": \"animals_and_pets\",\n                    \"interestName\": \"Animals & Pets\"\n                }\n            ],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216645\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216636\",\n            \"readingLevel\": \"250\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-30T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216963\",\n            \"readingLevel\": \"110\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2020-01-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216637\",\n            \"readingLevel\": \"300\",\n            \"readingLevelSource\": \"litpro\",\n            \"readingLevelDateAssessed\": \"2019-11-01T00:00:00Z\",\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216640\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216646\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        },\n        {\n            \"studentId\": \"216647\",\n            \"readingLevel\": null,\n            \"readingLevelSource\": null,\n            \"readingLevelDateAssessed\": null,\n            \"interests\": [],\n            \"skills\": []\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -584,7 +610,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": {{GROUP_SET_ID}},\n    \"name\": \"Group Set 6: TEACHER_SELECTED\",\n    \"groupType\": {{GROUP_TYPE}},\n    \"classId\": {{CLASS_ID}},\n    \"draft\": false,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": {{TIE_BREAKER}},\n    \"levelingType\": {{LEVELING_TYPE}},\n    \"groups\": {{GROUPS}}\n}",
+							"raw": "{\n    \"id\": {{GROUP_SET_ID}},\n    \"name\": \"Group Set 1: INTEREST+SKILL\",\n    \"groupType\": {{GROUP_TYPE}},\n    \"classId\": {{CLASS_ID}},\n    \"draft\": false,\n    \"newDataIsAvailable\": false,\n    \"tieBreaker\": {{TIE_BREAKER}},\n    \"levelingType\": {{LEVELING_TYPE}},\n    \"groups\": {{GROUPS}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -749,7 +775,7 @@
 					},
 					"response": [
 						{
-							"name": "Get Class Group Sets - GRL + Interest",
+							"name": "Get Class Group Sets - Skill + Interest",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -771,7 +797,7 @@
 							"header": [
 								{
 									"key": "Set-Cookie",
-									"value": "UISESSION=D6DB442E3EF6CDF47C88ED4F8E02C68E; Max-Age=1; Expires=Wed, 25-Mar-2020 19:48:56 GMT; Path=/; HttpOnly"
+									"value": "UISESSION=B33562549BB9104BA8E8C12B2A006685; Max-Age=1; Expires=Wed, 25-Mar-2020 19:40:52 GMT; Path=/; HttpOnly"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -807,11 +833,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Mar 2020 19:48:56 GMT"
+									"value": "Wed, 25 Mar 2020 19:40:51 GMT"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"results\": [\n        {\n            \"id\": 173,\n            \"name\": \"Karthik's Group Set 1\",\n            \"groupType\": \"GRL\",\n            \"classId\": 84057,\n            \"draft\": false,\n            \"newDataIsAvailable\": false,\n            \"tieBreaker\": \"INTEREST\",\n            \"levelingType\": \"GRL\",\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-25T19:48:50Z\",\n            \"updatedBy\": \"216569\",\n            \"updatedOn\": \"2020-03-25T19:48:53Z\",\n            \"groups\": [\n                {\n                    \"id\": 369,\n                    \"name\": \"GROUP 2\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [\n                        \"216641\",\n                        \"216642\",\n                        \"220116\",\n                        \"216640\",\n                        \"216636\",\n                        \"216647\",\n                        \"216637\",\n                        \"216648\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"music_and_the_arts\",\n                            \"interestName\": \"Music & the Arts\"\n                        },\n                        {\n                            \"interestShortName\": \"transportation\",\n                            \"interestName\": \"Transportation\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.9\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.2\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Animals\",\n                                \"Arts\",\n                                \"Transportation\"\n                            ],\n                            \"genre\": [\n                                \"Animal Fantasy\"\n                            ],\n                            \"skill\": null\n                        },\n                        \"sl\": {\n                            \"grade\": \"2\",\n                            \"lessons\": {\n                                \"skill_p\": null,\n                                \"skill_c\": null\n                            },\n                            \"resources\": {\n                                \"category\": null,\n                                \"shared-reading-library\": {\n                                    \"grade\": \"2\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0003\",\n                                        \"SRDSUBJ_0027\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0002\"\n                                    ],\n                                    \"skill\": null\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 370,\n                    \"name\": \"Student Roster\",\n                    \"readingLevel\": null,\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [],\n                    \"interests\": [],\n                    \"skills\": [],\n                    \"roster\": true\n                },\n                {\n                    \"id\": 368,\n                    \"name\": \"GROUP 1\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [\n                        \"216646\",\n                        \"216644\",\n                        \"216930\",\n                        \"216963\",\n                        \"216645\",\n                        \"216643\",\n                        \"216639\",\n                        \"216638\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"action_and_adventure\",\n                            \"interestName\": \"Action & Adventure\"\n                        },\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"fantasy_sci-fi_and_make_believe\",\n                            \"interestName\": \"Fantasy, Sci-Fi & Make Believe\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.5\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.8\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Adventurers\",\n                                \"Animals\",\n                                \"Princes, Princesses, Kings, Queens\"\n                            ],\n                            \"genre\": [\n                                \"Action & Adventure\",\n                                \"Adventure\",\n                                \"Animal Fantasy\",\n                                \"Science Fiction\",\n                                \"Fantasy\",\n                                \"Fractured Fairy Tale\",\n                                \"Animal Fantasy\",\n                                \"Fairy Tale\"\n                            ],\n                            \"skill\": null\n                        },\n                        \"sl\": {\n                            \"grade\": \"3\",\n                            \"lessons\": {\n                                \"skill_p\": null,\n                                \"skill_c\": null\n                            },\n                            \"resources\": {\n                                \"category\": null,\n                                \"shared-reading-library\": {\n                                    \"grade\": \"3\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0001\",\n                                        \"SRDSUBJ_0020\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0005\",\n                                        \"SRDGENR_0017\",\n                                        \"SRDGENR_0006\",\n                                        \"SRDGENR_0001\",\n                                        \"SRDGENR_0002\",\n                                        \"SRDGENR_0003\",\n                                        \"SRDGENR_0008\"\n                                    ],\n                                    \"skill\": null\n                                }\n                            }\n                        }\n                    }\n                }\n            ],\n            \"studentIds\": [\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216641\",\n                \"216642\",\n                \"216640\",\n                \"220116\",\n                \"216638\",\n                \"216639\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216645\",\n                \"216646\"\n            ]\n        }\n    ],\n    \"total\": 1\n}"
+							"body": "{\n    \"results\": [\n        {\n            \"id\": 172,\n            \"name\": \"Karthik's Group Set 1\",\n            \"groupType\": \"SKILL\",\n            \"classId\": 84057,\n            \"draft\": false,\n            \"newDataIsAvailable\": false,\n            \"tieBreaker\": \"INTEREST\",\n            \"levelingType\": \"GRL\",\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-25T15:01:48Z\",\n            \"updatedBy\": \"216569\",\n            \"updatedOn\": \"2020-03-25T15:01:52Z\",\n            \"groups\": [\n                {\n                    \"id\": 367,\n                    \"name\": \"GROUP 2\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [\n                        \"216636\",\n                        \"216647\",\n                        \"216641\",\n                        \"216640\",\n                        \"216642\",\n                        \"220116\",\n                        \"216637\",\n                        \"216648\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"music_and_the_arts\",\n                            \"interestName\": \"Music & the Arts\"\n                        },\n                        {\n                            \"interestShortName\": \"transportation\",\n                            \"interestName\": \"Transportation\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.9\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.2\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": null,\n                            \"subject\": [\n                                \"Animals\",\n                                \"Arts\",\n                                \"Transportation\"\n                            ],\n                            \"genre\": [\n                                \"Animal Fantasy\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"2\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"2\",\n                                    \"grl\": null,\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0003\",\n                                        \"SRDSUBJ_0027\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0002\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 366,\n                    \"name\": \"Student Roster\",\n                    \"readingLevel\": null,\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [],\n                    \"interests\": [],\n                    \"skills\": [],\n                    \"roster\": true\n                },\n                {\n                    \"id\": 365,\n                    \"name\": \"GROUP 1\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [\n                        \"216646\",\n                        \"216645\",\n                        \"216644\",\n                        \"216930\",\n                        \"216963\",\n                        \"216643\",\n                        \"216639\",\n                        \"216638\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"action_and_adventure\",\n                            \"interestName\": \"Action & Adventure\"\n                        },\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"fantasy_sci-fi_and_make_believe\",\n                            \"interestName\": \"Fantasy, Sci-Fi & Make Believe\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.5\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.8\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": null,\n                            \"subject\": [\n                                \"Adventurers\",\n                                \"Animals\",\n                                \"Princes, Princesses, Kings, Queens\"\n                            ],\n                            \"genre\": [\n                                \"Action & Adventure\",\n                                \"Adventure\",\n                                \"Animal Fantasy\",\n                                \"Science Fiction\",\n                                \"Fantasy\",\n                                \"Fractured Fairy Tale\",\n                                \"Animal Fantasy\",\n                                \"Fairy Tale\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"3\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"3\",\n                                    \"grl\": null,\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0001\",\n                                        \"SRDSUBJ_0020\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0005\",\n                                        \"SRDGENR_0017\",\n                                        \"SRDGENR_0006\",\n                                        \"SRDGENR_0001\",\n                                        \"SRDGENR_0002\",\n                                        \"SRDGENR_0003\",\n                                        \"SRDGENR_0008\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                }\n            ],\n            \"studentIds\": [\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216641\",\n                \"216642\",\n                \"216640\",\n                \"220116\",\n                \"216638\",\n                \"216639\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216645\",\n                \"216646\"\n            ]\n        }\n    ],\n    \"total\": 1\n}"
 						},
 						{
 							"name": "Get Class Group Sets - Teacher Selected",
@@ -879,7 +905,7 @@
 							"body": "{\n    \"results\": [\n        {\n            \"id\": 175,\n            \"name\": \"Karthik's Group Set 1\",\n            \"groupType\": \"TEACHER_SELECTED\",\n            \"classId\": 84057,\n            \"draft\": false,\n            \"newDataIsAvailable\": false,\n            \"tieBreaker\": null,\n            \"levelingType\": \"GRL\",\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-26T13:47:06Z\",\n            \"updatedBy\": \"216569\",\n            \"updatedOn\": \"2020-03-26T13:47:10Z\",\n            \"groups\": [\n                {\n                    \"id\": 372,\n                    \"name\": \"GROUP 1\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-26T13:47:06Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-26T13:47:10Z\",\n                    \"studentIds\": [\n                        \"216639\",\n                        \"216638\",\n                        \"216644\",\n                        \"216930\",\n                        \"216963\",\n                        \"216643\",\n                        \"216646\",\n                        \"216645\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"action_and_adventure\",\n                            \"interestName\": \"Action & Adventure\"\n                        },\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"fantasy_sci-fi_and_make_believe\",\n                            \"interestName\": \"Fantasy, Sci-Fi & Make Believe\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.5\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.8\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Adventurers\",\n                                \"Animals\",\n                                \"Princes, Princesses, Kings, Queens\"\n                            ],\n                            \"genre\": [\n                                \"Action & Adventure\",\n                                \"Adventure\",\n                                \"Animal Fantasy\",\n                                \"Science Fiction\",\n                                \"Fantasy\",\n                                \"Fractured Fairy Tale\",\n                                \"Animal Fantasy\",\n                                \"Fairy Tale\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"3\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"3\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0001\",\n                                        \"SRDSUBJ_0020\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0005\",\n                                        \"SRDGENR_0017\",\n                                        \"SRDGENR_0006\",\n                                        \"SRDGENR_0001\",\n                                        \"SRDGENR_0002\",\n                                        \"SRDGENR_0003\",\n                                        \"SRDGENR_0008\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 374,\n                    \"name\": \"GROUP 2\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-26T13:47:06Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-26T13:47:10Z\",\n                    \"studentIds\": [\n                        \"216642\",\n                        \"216641\",\n                        \"216640\",\n                        \"220116\",\n                        \"216637\",\n                        \"216648\",\n                        \"216636\",\n                        \"216647\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"music_and_the_arts\",\n                            \"interestName\": \"Music & the Arts\"\n                        },\n                        {\n                            \"interestShortName\": \"transportation\",\n                            \"interestName\": \"Transportation\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.9\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.2\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Animals\",\n                                \"Arts\",\n                                \"Transportation\"\n                            ],\n                            \"genre\": [\n                                \"Animal Fantasy\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"2\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"2\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0003\",\n                                        \"SRDSUBJ_0027\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0002\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 373,\n                    \"name\": \"Student Roster\",\n                    \"readingLevel\": null,\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-26T13:47:06Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-26T13:47:10Z\",\n                    \"studentIds\": [],\n                    \"interests\": [],\n                    \"skills\": [],\n                    \"roster\": true\n                }\n            ],\n            \"studentIds\": [\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216641\",\n                \"216642\",\n                \"216640\",\n                \"220116\",\n                \"216638\",\n                \"216639\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216645\",\n                \"216646\"\n            ]\n        }\n    ],\n    \"total\": 1\n}"
 						},
 						{
-							"name": "Get Class Group Sets - Skill + Interest",
+							"name": "Get Class Group Sets - GRL + Interest",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -901,7 +927,7 @@
 							"header": [
 								{
 									"key": "Set-Cookie",
-									"value": "UISESSION=B33562549BB9104BA8E8C12B2A006685; Max-Age=1; Expires=Wed, 25-Mar-2020 19:40:52 GMT; Path=/; HttpOnly"
+									"value": "UISESSION=D6DB442E3EF6CDF47C88ED4F8E02C68E; Max-Age=1; Expires=Wed, 25-Mar-2020 19:48:56 GMT; Path=/; HttpOnly"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -937,11 +963,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Mar 2020 19:40:51 GMT"
+									"value": "Wed, 25 Mar 2020 19:48:56 GMT"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"results\": [\n        {\n            \"id\": 172,\n            \"name\": \"Karthik's Group Set 1\",\n            \"groupType\": \"SKILL\",\n            \"classId\": 84057,\n            \"draft\": false,\n            \"newDataIsAvailable\": false,\n            \"tieBreaker\": \"INTEREST\",\n            \"levelingType\": \"GRL\",\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-25T15:01:48Z\",\n            \"updatedBy\": \"216569\",\n            \"updatedOn\": \"2020-03-25T15:01:52Z\",\n            \"groups\": [\n                {\n                    \"id\": 367,\n                    \"name\": \"GROUP 2\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [\n                        \"216636\",\n                        \"216647\",\n                        \"216641\",\n                        \"216640\",\n                        \"216642\",\n                        \"220116\",\n                        \"216637\",\n                        \"216648\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"music_and_the_arts\",\n                            \"interestName\": \"Music & the Arts\"\n                        },\n                        {\n                            \"interestShortName\": \"transportation\",\n                            \"interestName\": \"Transportation\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.9\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.2\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": null,\n                            \"subject\": [\n                                \"Animals\",\n                                \"Arts\",\n                                \"Transportation\"\n                            ],\n                            \"genre\": [\n                                \"Animal Fantasy\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"2\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"2\",\n                                    \"grl\": null,\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0003\",\n                                        \"SRDSUBJ_0027\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0002\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 366,\n                    \"name\": \"Student Roster\",\n                    \"readingLevel\": null,\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [],\n                    \"interests\": [],\n                    \"skills\": [],\n                    \"roster\": true\n                },\n                {\n                    \"id\": 365,\n                    \"name\": \"GROUP 1\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T15:01:48Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T15:01:52Z\",\n                    \"studentIds\": [\n                        \"216646\",\n                        \"216645\",\n                        \"216644\",\n                        \"216930\",\n                        \"216963\",\n                        \"216643\",\n                        \"216639\",\n                        \"216638\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"action_and_adventure\",\n                            \"interestName\": \"Action & Adventure\"\n                        },\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"fantasy_sci-fi_and_make_believe\",\n                            \"interestName\": \"Fantasy, Sci-Fi & Make Believe\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.5\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.8\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": null,\n                            \"subject\": [\n                                \"Adventurers\",\n                                \"Animals\",\n                                \"Princes, Princesses, Kings, Queens\"\n                            ],\n                            \"genre\": [\n                                \"Action & Adventure\",\n                                \"Adventure\",\n                                \"Animal Fantasy\",\n                                \"Science Fiction\",\n                                \"Fantasy\",\n                                \"Fractured Fairy Tale\",\n                                \"Animal Fantasy\",\n                                \"Fairy Tale\"\n                            ],\n                            \"skill\": [\n                                \"Letter-Sound Correspondence\",\n                                \"Consonant Blends\",\n                                \"Connect Ideas\",\n                                \"Word Meaning\"\n                            ]\n                        },\n                        \"sl\": {\n                            \"grade\": \"3\",\n                            \"lessons\": {\n                                \"skill_p\": [\n                                    \"SKILL_0073\"\n                                ],\n                                \"skill_c\": [\n                                    \"SKILL_0096\",\n                                    \"SKILL_0070\"\n                                ]\n                            },\n                            \"resources\": {\n                                \"category\": {\n                                    \"comprehension-support\": \"Comprehension Toolkit\",\n                                    \"vocabulary-toolkit\": \"Vocabulary Toolkit\",\n                                    \"grammar-toolkit\": \"Grammar Toolkit\",\n                                    \"assessment-management-toolkit\": \"Assessment Toolkit\",\n                                    \"phonics-resources\": \"Phonics Toolkit\"\n                                },\n                                \"shared-reading-library\": {\n                                    \"grade\": \"3\",\n                                    \"grl\": null,\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0001\",\n                                        \"SRDSUBJ_0020\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0005\",\n                                        \"SRDGENR_0017\",\n                                        \"SRDGENR_0006\",\n                                        \"SRDGENR_0001\",\n                                        \"SRDGENR_0002\",\n                                        \"SRDGENR_0003\",\n                                        \"SRDGENR_0008\"\n                                    ],\n                                    \"skill\": [\n                                        \"SRDSKILL_0008\",\n                                        \"SRDSKILL_0016\"\n                                    ]\n                                }\n                            }\n                        }\n                    }\n                }\n            ],\n            \"studentIds\": [\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216641\",\n                \"216642\",\n                \"216640\",\n                \"220116\",\n                \"216638\",\n                \"216639\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216645\",\n                \"216646\"\n            ]\n        }\n    ],\n    \"total\": 1\n}"
+							"body": "{\n    \"results\": [\n        {\n            \"id\": 173,\n            \"name\": \"Karthik's Group Set 1\",\n            \"groupType\": \"GRL\",\n            \"classId\": 84057,\n            \"draft\": false,\n            \"newDataIsAvailable\": false,\n            \"tieBreaker\": \"INTEREST\",\n            \"levelingType\": \"GRL\",\n            \"createdBy\": \"216569\",\n            \"createdOn\": \"2020-03-25T19:48:50Z\",\n            \"updatedBy\": \"216569\",\n            \"updatedOn\": \"2020-03-25T19:48:53Z\",\n            \"groups\": [\n                {\n                    \"id\": 369,\n                    \"name\": \"GROUP 2\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [\n                        \"216641\",\n                        \"216642\",\n                        \"220116\",\n                        \"216640\",\n                        \"216636\",\n                        \"216647\",\n                        \"216637\",\n                        \"216648\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"music_and_the_arts\",\n                            \"interestName\": \"Music & the Arts\"\n                        },\n                        {\n                            \"interestShortName\": \"transportation\",\n                            \"interestName\": \"Transportation\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.9\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.2\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Animals\",\n                                \"Arts\",\n                                \"Transportation\"\n                            ],\n                            \"genre\": [\n                                \"Animal Fantasy\"\n                            ],\n                            \"skill\": null\n                        },\n                        \"sl\": {\n                            \"grade\": \"2\",\n                            \"lessons\": {\n                                \"skill_p\": null,\n                                \"skill_c\": null\n                            },\n                            \"resources\": {\n                                \"category\": null,\n                                \"shared-reading-library\": {\n                                    \"grade\": \"2\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0003\",\n                                        \"SRDSUBJ_0027\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0002\"\n                                    ],\n                                    \"skill\": null\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    \"id\": 370,\n                    \"name\": \"Student Roster\",\n                    \"readingLevel\": null,\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [],\n                    \"interests\": [],\n                    \"skills\": [],\n                    \"roster\": true\n                },\n                {\n                    \"id\": 368,\n                    \"name\": \"GROUP 1\",\n                    \"readingLevel\": \"B-H\",\n                    \"createdBy\": \"216569\",\n                    \"createdOn\": \"2020-03-25T19:48:50Z\",\n                    \"updatedBy\": \"216569\",\n                    \"updatedOn\": \"2020-03-25T19:48:53Z\",\n                    \"studentIds\": [\n                        \"216646\",\n                        \"216644\",\n                        \"216930\",\n                        \"216963\",\n                        \"216645\",\n                        \"216643\",\n                        \"216639\",\n                        \"216638\"\n                    ],\n                    \"interests\": [\n                        {\n                            \"interestShortName\": \"action_and_adventure\",\n                            \"interestName\": \"Action & Adventure\"\n                        },\n                        {\n                            \"interestShortName\": \"animals_and_pets\",\n                            \"interestName\": \"Animals & Pets\"\n                        },\n                        {\n                            \"interestShortName\": \"fantasy_sci-fi_and_make_believe\",\n                            \"interestName\": \"Fantasy, Sci-Fi & Make Believe\"\n                        }\n                    ],\n                    \"skills\": [\n                        {\n                            \"skillShortName\": \"analogies\",\n                            \"skillName\": \"Analogies\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.4\n                        },\n                        {\n                            \"skillShortName\": \"blending\",\n                            \"skillName\": \"Blending\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.5\n                        },\n                        {\n                            \"skillShortName\": \"alphabet\",\n                            \"skillName\": \"Alphabet Knowledge\",\n                            \"correctAttempts\": 0,\n                            \"totalAttempts\": 0,\n                            \"skillAvg\": 0.8\n                        }\n                    ],\n                    \"roster\": false,\n                    \"recommendations\": {\n                        \"lba\": {\n                            \"level\": \"B_C_D_E_F_G_H\",\n                            \"subject\": [\n                                \"Adventurers\",\n                                \"Animals\",\n                                \"Princes, Princesses, Kings, Queens\"\n                            ],\n                            \"genre\": [\n                                \"Action & Adventure\",\n                                \"Adventure\",\n                                \"Animal Fantasy\",\n                                \"Science Fiction\",\n                                \"Fantasy\",\n                                \"Fractured Fairy Tale\",\n                                \"Animal Fantasy\",\n                                \"Fairy Tale\"\n                            ],\n                            \"skill\": null\n                        },\n                        \"sl\": {\n                            \"grade\": \"3\",\n                            \"lessons\": {\n                                \"skill_p\": null,\n                                \"skill_c\": null\n                            },\n                            \"resources\": {\n                                \"category\": null,\n                                \"shared-reading-library\": {\n                                    \"grade\": \"3\",\n                                    \"grl\": \"B-H\",\n                                    \"subject\": [\n                                        \"SRDSUBJ_0002\",\n                                        \"SRDSUBJ_0001\",\n                                        \"SRDSUBJ_0020\"\n                                    ],\n                                    \"genre\": [\n                                        \"SRDGENR_0005\",\n                                        \"SRDGENR_0017\",\n                                        \"SRDGENR_0006\",\n                                        \"SRDGENR_0001\",\n                                        \"SRDGENR_0002\",\n                                        \"SRDGENR_0003\",\n                                        \"SRDGENR_0008\"\n                                    ],\n                                    \"skill\": null\n                                }\n                            }\n                        }\n                    }\n                }\n            ],\n            \"studentIds\": [\n                \"216643\",\n                \"216644\",\n                \"216930\",\n                \"216963\",\n                \"216641\",\n                \"216642\",\n                \"216640\",\n                \"220116\",\n                \"216638\",\n                \"216639\",\n                \"216636\",\n                \"216647\",\n                \"216637\",\n                \"216648\",\n                \"216645\",\n                \"216646\"\n            ]\n        }\n    ],\n    \"total\": 1\n}"
 						}
 					]
 				},
@@ -985,7 +1011,7 @@
 			"name": "SDM Proxy",
 			"item": [
 				{
-					"name": "Get classes",
+					"name": "Get Classes",
 					"event": [
 						{
 							"listen": "test",
@@ -1016,7 +1042,7 @@
 					"response": []
 				},
 				{
-					"name": "Get students",
+					"name": "Get Class Students",
 					"event": [
 						{
 							"listen": "test",
@@ -1120,6 +1146,140 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get SDM Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/sdm/info",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"sdm",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Organizations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/organizations",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teacher",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/sdm/proxy/roster/staff/{{TEACHER_ID}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"sdm",
+								"proxy",
+								"roster",
+								"staff",
+								"{{TEACHER_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Org Roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/sdm/proxy/composite/staff/{{TEACHER_ID}}/org-roles",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"sdm",
+								"proxy",
+								"composite",
+								"staff",
+								"{{TEACHER_ID}}",
+								"org-roles"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "All calls that are meant to return SDM info",
@@ -1201,6 +1361,184 @@
 									"key": "endDate",
 									"value": ""
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Summary Widgets",
+			"item": [
+				{
+					"name": "Get First Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/summaries/first",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"summaries",
+								"first"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Word Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/summaries/word",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"summaries",
+								"word"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Litpro Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/summaries/lit-pro-independent-reading",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"summaries",
+								"lit-pro-independent-reading"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get GRL Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/summaries/reading-levels/grl",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"summaries",
+								"reading-levels",
+								"grl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lexile Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0d95e32-1219-403b-aedd-6e7363f59a87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/classes/{{CLASS_ID}}/summaries/reading-levels/lexile",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"summaries",
+								"reading-levels",
+								"lexile"
 							]
 						}
 					},
