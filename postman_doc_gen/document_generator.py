@@ -58,6 +58,8 @@ class DocumentGenerator:
                 api_info=self.api_info
             ))
 
+        return output_dir
+
     @staticmethod
     def get_template(templates_dir):
         env = Environment(loader=FileSystemLoader(templates_dir))

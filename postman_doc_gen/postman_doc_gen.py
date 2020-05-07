@@ -27,4 +27,5 @@ if __name__ == '__main__':
     parser = init_arg_parse()
     args = parser.parse_args()
     d = DocumentGenerator()
-    d.generate_doc(args.collection, args.env, args.out)
+    output_dir = d.generate_doc(args.collection, args.env, args.out)
+    print("Success. Document generated at " + output_dir)
