@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "3e68cc1d-b64b-43a8-9a60-f4c69b7476c7",
+		"name": "Sample Collection",
+		"description": "A sample collection to demonstrate how postman-doc-gen works.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Folder 1",
+			"item": [
+				{
+					"name": "Sample Create API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": null,\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t},\n\t\t{\n\t\t\t\"someId\":123\n\t\t},\n\t\t{\n\t\t\t\"someId\":123\n\t\t},\n\t\t{\n\t\t\t\"someId\":123\n\t\t},\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/sample/url/path",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"sample",
+								"url",
+								"path"
+							]
+						},
+						"description": "A simple POST request"
+					},
+					"response": [
+						{
+							"name": "Example 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": null,\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/sample/url/path",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"sample",
+										"url",
+										"path"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"id\": {{SAMPLE_ID}},\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}"
+						}
+					]
+				},
+				{
+					"name": "Sample Update API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/sample/url/path?id={{SAMPLE_ID}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"sample",
+								"url",
+								"path"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{SAMPLE_ID}}"
+								}
+							]
+						},
+						"description": "A simple PUT request"
+					},
+					"response": [
+						{
+							"name": "Example 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/sample/url/path?id={{SAMPLE_ID}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"sample",
+										"url",
+										"path"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{SAMPLE_ID}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"id\": {{SAMPLE_ID}},\n\t\"name\": {{SAMPLE_NAME}},\n\t\"array\": [\n\t\t{\n\t\t\t\"someId\":123\n\t\t}\n\t]\n\t\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sample GET API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/sample/url/path",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"sample",
+						"url",
+						"path"
+					]
+				},
+				"description": "A simple GET request"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

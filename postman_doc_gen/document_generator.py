@@ -3,10 +3,9 @@ import os
 from collections import OrderedDict
 from distutils.dir_util import copy_tree
 
+import constants
 from fastjsonschema import validate
 from jinja2 import Environment, FileSystemLoader
-
-import constants
 from models import APIExampleModel, APIModel, APICollectionModel
 
 
@@ -21,7 +20,14 @@ class DocumentGenerator:
     def __init__(self):
         super().__init__()
 
-    def generate_doc(self, collection_file_name, environment_file_name=None, output_dir=None):
+    def generate_doc(self, collection_file_name: object, environment_file_name: object = None, output_dir: object = None) -> object:
+        """
+        :param collection_file_name: [Required] postman collection json
+        :param environment_file_name: [Optional] postman environment json
+        :param output_dir: [Optional] defaults to current directory
+        :return: the output directory used
+        """
+
         root = os.path.dirname(os.path.abspath(__file__))
         templates_dir = os.path.join(root, constants.TEMPLATES_DIR)
         template = self.get_template(templates_dir)
@@ -62,17 +68,32 @@ class DocumentGenerator:
 
     @staticmethod
     def get_template(templates_dir):
+        """
+        Loads the JINJA 2 template file and returns it
+        :param templates_dir: the directory containing the template
+        :return: the JINJA 2 template
+        """
         env = Environment(loader=FileSystemLoader(templates_dir))
         return env.get_template(constants.TEMPLATE_FILE_NAME)
 
     @staticmethod
     def get_json_file(file_name):
+        """
+        Gets a json file at the specified path
+        :param file_name: file path
+        :return: the json file at path
+        """
         with open(file_name) as f:
             json_file = json.load(f)
         return json_file
 
     @staticmethod
     def validate_collection(file_name) -> json:
+        """
+        Validates the postman collection against the postman schema (2.1.0)
+        :param file_name: the postman collection file path
+        :return: validated collection json
+        """
         root = os.path.dirname(os.path.abspath(__file__))
         schema_filename = os.path.join(root, constants.POSTMAN_SCHEMA_DIR, constants.POSTMAN_JSON_SCHEMA)
 
@@ -85,10 +106,21 @@ class DocumentGenerator:
 
     @staticmethod
     def escape_string(value):
+        """
+        Escapes the '\' character in the string
+        :param value: string to format
+        :return: formatted string
+        """
         return value.replace('\"', '\\"')
 
     @staticmethod
     def apply_env_values(json_collection, json_env):
+        """
+        Applies the environment values to the postman collection examples
+        :param json_collection: postman collection example json
+        :param json_env: postman environment json
+        :return: json with replaced values
+        """
         if json_env is None:
             return json_collection
         collection_string = json.dumps(json_collection)
@@ -103,6 +135,12 @@ class DocumentGenerator:
 
     @staticmethod
     def apply_env_values_string(string_value, json_env):
+        """
+        Applies the environment values to a string
+        :param string_value: postman collection example json
+        :param json_env: postman environment json
+        :return: string with replaced values
+        """
         if json_env is None:
             return string_value
 
@@ -115,13 +153,18 @@ class DocumentGenerator:
         return string_value
 
     def add_items(self, tree, json_node):
+        """
+        Recursive method to generate the documentation by exploring the json
+        :param tree: dictionary with folders as key and sub folders & api's as values
+        :param json_node: the current json node being explored
+        """
         for item in json_node['item']:
             if item.get('item', None) is not None:
                 node = dict()
                 node['text'] = item.get(constants.NAME, constants.NOT_FOUND)
-                subnodes = []
-                self.add_items(subnodes, item)
-                node['nodes'] = subnodes
+                sub_nodes = []
+                self.add_items(sub_nodes, item)
+                node['nodes'] = sub_nodes
                 node['icon'] = constants.FOLDER_ICON
                 node['selectable'] = 'false'
                 tree.append(node)
@@ -135,7 +178,11 @@ class DocumentGenerator:
                 tree.append(node)
                 self.add_apis(item)
 
-    def add_apis(self, item):
+    def add_apis(self, item: json):
+        """
+        Creates an APIModel and adds it to api_info
+        :param item: json node representing an api
+        """
         api = APIModel()
         api.id = self.api_id_counter
         api.name = item.get(constants.NAME, constants.NOT_FOUND)
@@ -153,7 +200,13 @@ class DocumentGenerator:
         api.examples = self.get_examples(api, item.get(constants.RESPONSE, []))
         self.api_info.append(api)
 
-    def get_examples(self, api, json_responses) -> list:
+    def get_examples(self, api: APIModel, json_responses: list) -> list:
+        """
+        Extracts examples for the current api
+        :param api: the current APIModel object being explored
+        :param json_responses: list of available examples
+        :return: list of APIExampleModel
+        """
         examples = []
 
         if self.env_file is not None:
@@ -192,8 +245,8 @@ class DocumentGenerator:
             if api_example.url is not None:
                 api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
             if api.body is not None:
-                api_example.request_body = api_example.request_body + '\n' + self.apply_env_values(api.body, self.env_file)
+                api_example.request_body = api_example.request_body + '\n' + self.apply_env_values(api.body,
+                                                                                                   self.env_file)
             examples.append(api_example)
 
         return examples
-
