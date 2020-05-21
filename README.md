@@ -26,6 +26,19 @@ Generate HTML API documentation from a postman collection.
     3. js - this is the javascript folder consisting of the required js files
 
 
+## To build locally
+
+- Clone the repository
+- pip install the dependencies from the requirements file 
+    ```
+    pip install -r requirements.txt
+    ```
+- run the code
+    ```
+    python postman_doc_gen.py [path/to/collection] -o [path/to/output/folder] 
+    ```
+
+
 ## Sample HTML Documentation
 
 A video of the sample html document generated using the collection and environment json files 
