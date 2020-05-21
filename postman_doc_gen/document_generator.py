@@ -174,7 +174,7 @@ class DocumentGenerator:
                 node = dict()
                 node['text'] = item.get(constants.NAME, constants.NOT_FOUND)
                 node['href'] = '#' + str(self.api_id_counter)
-                node[constants.METHOD] = item.get(constants.REQUEST).get(constants.METHOD, 'None')
+                node[constants.METHOD] = item.get(constants.REQUEST, {}).get(constants.METHOD, 'None')
                 tree.append(node)
                 self.add_apis(item)
 
@@ -186,17 +186,18 @@ class DocumentGenerator:
         api = APIModel()
         api.id = self.api_id_counter
         api.name = item.get(constants.NAME, constants.NOT_FOUND)
-        if item.get(constants.REQUEST).get(constants.DESCRIPTION, None) is not None:
-            api.description = item.get(constants.REQUEST).get(constants.DESCRIPTION)
-        if item.get(constants.REQUEST).get(constants.BODY, None) is not None:
-            api.body = item.get(constants.REQUEST).get(constants.BODY).get(constants.RAW, None)
+        api.body = None
+        if item.get(constants.REQUEST, {}).get(constants.DESCRIPTION, None) is not None:
+            api.description = item.get(constants.REQUEST, {}).get(constants.DESCRIPTION, None)
+        if item.get(constants.REQUEST, {}).get(constants.BODY, None) is not None:
+            api.body = item.get(constants.REQUEST, {}).get(constants.BODY, {}).get(constants.RAW, None)
 
         if api.body is not None:
             api.body = '\n' + api.body.strip()  # append a line break for better formatting of jsons
 
-        api.method = item.get(constants.REQUEST).get(constants.METHOD)
-        if item.get(constants.REQUEST).get(constants.URL, None) is not None:
-            api.url = item.get(constants.REQUEST).get(constants.URL).get(constants.RAW)
+        api.method = item.get(constants.REQUEST, {}).get(constants.METHOD, None)
+        if item.get(constants.REQUEST, {}).get(constants.URL, None) is not None:
+            api.url = item.get(constants.REQUEST, {}).get(constants.URL, {}).get(constants.RAW, None)
         api.examples = self.get_examples(api, item.get(constants.RESPONSE, []))
         self.api_info.append(api)
 
@@ -218,13 +219,15 @@ class DocumentGenerator:
             api_example.request_id = str(self.api_id_counter)
             api_example.id = 'response_' + str(self.response_id)
             api_example.name = res.get(constants.NAME, constants.NOT_FOUND)
-            api_example.method = res.get(constants.ORIGINAL_REQUEST).get(constants.METHOD)
-            api_example.url = res.get(constants.ORIGINAL_REQUEST).get(constants.URL).get(constants.RAW)
+            api_example.method = res.get(constants.ORIGINAL_REQUEST, {}).get(constants.METHOD, None)
+            api_example.url = res.get(constants.ORIGINAL_REQUEST, {}).get(constants.URL, {}).get(constants.RAW, None)
+            api_example.request_body = None
+
             if api_example.url is not None:
                 api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
-            if res.get(constants.ORIGINAL_REQUEST).get(constants.BODY, None) is not None:
-                api_example.request_body = api_example.request_body + '\n' + res.get(constants.ORIGINAL_REQUEST).get(
-                    constants.BODY).get(constants.RAW, None)
+            if res.get(constants.ORIGINAL_REQUEST, {}).get(constants.BODY, None) is not None:
+                api_example.request_body = (api_example.request_body if api_example.request_body is not None else '') \
+                    + '\n' + res.get(constants.ORIGINAL_REQUEST).get(constants.BODY).get(constants.RAW, None)
 
             api_example.status = res.get(constants.STATUS)
             api_example.code = res.get(constants.CODE)
@@ -239,14 +242,19 @@ class DocumentGenerator:
             api_example.id = 'response_' + str(self.response_id)
             api_example.name = api.name
             api_example.method = api.method
+            api_example.url = None
+            api_example.request_body = None
+
             if api.url is not None:
                 api_example.url = self.apply_env_values_string(api.url, self.env_file)
 
-            if api_example.url is not None:
+            if api_example.url is not None and api_example.method is not None:
                 api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
+
             if api.body is not None:
-                api_example.request_body = api_example.request_body + '\n' + self.apply_env_values(api.body,
-                                                                                                   self.env_file)
+                api_example.request_body = (api_example.request_body if api_example.request_body is not None else '') \
+                                           + '\n' + self.apply_env_values(api.body, self.env_file)
+
             examples.append(api_example)
 
         return examples
