@@ -1,6 +1,23 @@
 import json
 
 
+class KeyValueModel:
+    key: str = None
+    description: str = None
+    value: str = None
+
+    def __init__(self, key, value, desc):
+        self.key = key
+        self.value = value
+        self.description = desc
+
+
+class APIBodyModel:
+    mode: str = ''
+    raw: str = None
+    key_values: list = None
+
+
 class APIExampleModel:
     id: str = None
     request_id: str = None
@@ -24,7 +41,11 @@ class APIModel:
     name: str = None
     description: str = None
     method: str = None
-    body: str = None
+    body: APIBodyModel = None
+    headers: list = None
+    params: list = None
+    path_variables: list = None
+
     url: str = None
     examples: list = []
 

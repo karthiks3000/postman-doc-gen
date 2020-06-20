@@ -59,7 +59,6 @@ body #doc-body:not(.is-loading) {
     background-color: #f8f8f8;
 }
 .api-information .description {
-    padding-bottom: 20px;
     word-break: break-word;
     overflow-x: auto;
     font-weight: 400;
@@ -79,6 +78,31 @@ body #doc-body:not(.is-loading) {
 .api-information .request-body .body-type {
     color: #7e7e7e;
     padding-left: 4px;
+}
+.api-information .request-body .param {
+    display: flow-root;
+    margin-left: 2px;
+}
+.api-information .request-body .param .name {
+    color: #282828;
+    line-height: 24px;
+    float: left;
+    text-align: left;
+    padding-right: 20px;
+    font-weight: 700;
+    font-size: 12px;
+}
+.api-information .request-body .param .value {
+    color: #282828;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    word-break: break-word;
+}
+.api-information .request-body .param .description {
+    float: right;
+    font-size: 12px;
+    color: grey;
 }
 .api-information .request-body .raw-body {
     position: relative;

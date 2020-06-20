@@ -98,17 +98,76 @@
                                         <p>{{api.description|safe}}</p>
                                     </div>
                                     {% endif %}
-                                    {%- if api.body is defined and api.body is not none%}
+
+                                    {%- if api.headers is defined and api.headers is not none %}
                                     <div class="request-body">
-                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <div class="body-heading">HEADERS</div>
                                         <hr>
-                                        <div class="raw-body code-snippet">
-                                          <pre class="body-block click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if api.body|length > 130 }}" data-title="{{api.name}}">
-                                              <code>
-                                                {{api.body|safe}}
-                                              </code>
-                                          </pre>
-                                        </div>
+                                        {%- for item in api.headers %}
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">{{ item.key }}</div>
+                                            <div class="value col-md-9 col-xs-12">{{ item.value | safe}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>{{ item.description | safe}}</p>
+                                            </div>
+                                          </div>
+                                        {%- endfor %}
+                                    </div>
+                                    {% endif %}
+
+                                    {%- if api.params is defined and api.params is not none %}
+                                    <div class="request-body">
+                                        <div class="body-heading">PARAMS</div>
+                                        <hr>
+                                        {%- for item in api.params %}
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">{{ item.key }}</div>
+                                            <div class="value col-md-9 col-xs-12">{{ item.value | safe}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>{{ item.description | safe}}</p>
+                                            </div>
+                                          </div>
+                                        {%- endfor %}
+                                    </div>
+                                    {% endif %}
+
+                                    {%- if api.path_variables is defined and api.path_variables is not none %}
+                                    <div class="request-body">
+                                        <div class="body-heading">PATH VARIABLES</div>
+                                        <hr>
+                                        {%- for item in api.path_variables %}
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">{{ item.key }}</div>
+                                            <div class="value col-md-9 col-xs-12">{{ item.value | safe}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>{{ item.description | safe}}</p>
+                                            </div>
+                                          </div>
+                                        {%- endfor %}
+                                    </div>
+                                    {% endif %}
+
+                                    {%- if api.body is defined and api.body is not none %}
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">{{ api.body.mode }}</span></div>
+                                        <hr>
+                                        {%- if api.body.mode == 'raw' and api.body.raw is not none %}
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if api.body.raw|length > 130 }}" data-title="{{api.name}}">
+                                                  <code>
+                                                    {{api.body.raw|safe}}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        {% endif %}
+
+                                        {%- if api.body.key_values is not none %}
+                                            {%- for item in api.body.key_values %}
+                                              <div class="param row">
+                                                <div class="name col-md-3 col-xs-12">{{ item.key }}</div>
+                                                <div class="value col-md-9 col-xs-12">{{ item.value }}</div>
+                                                <div class="description col-md-9 col-xs-12"><p>{{ item.description }}</p>
+                                                </div>
+                                              </div>
+                                            {%- endfor %}
+                                        {% endif %}
                                     </div>
                                     {% endif %}
                                 </div>
@@ -139,7 +198,7 @@
                                 <div class="formatted-requests {{ 'hide' if loop.index0 != 0 }}" data-request-id="{{example.request_id}}"  data-id="{{example.id}}">
                                     <div class="request code-snippet">
                                         <div>
-                                            <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.request_body|length > 180 }}" data-title="{{example.name}}">
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.request_body|trim|length > 180 }}" data-title="{{example.name}}">
                                                 <code class="is-highlighted">{{example.request_body|safe}}</code>
                                             </pre>
                                         </div>
@@ -156,7 +215,7 @@
                                         </div>
                                         <div class="responses code-snippet">
                                             <div>
-                                                <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.response_body|length > 180 }}" data-title="{{example.name}}">
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper {{ 'is-expandable' if example.response_body|trim|length > 180 }}" data-title="{{example.name}}">
                                                     <code class="is-highlighted">{{example.response_body|safe}}</code>
                                                 </pre>
                                             </div>

@@ -37,7 +37,10 @@ Generate HTML API documentation from a postman collection.
     ```
     python postman_doc_gen.py [path/to/collection] -o [path/to/output/folder] 
     ```
-
+- to create a new executable 
+    ```
+    pyinstaller -F postman_doc_gen.spec postman_doc_gen.py
+    ```
 
 ## Sample HTML Documentation
 
