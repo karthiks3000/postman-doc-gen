@@ -193,7 +193,6 @@ class DocumentGenerator:
         if item.get(REQUEST, {}).get(DESCRIPTION, None) is not None:
             api.description = item.get(REQUEST, {}).get(DESCRIPTION, None)
         if item.get(REQUEST, {}).get(BODY, None) is not None:
-            # api.body = item.get(REQUEST, {}).get(BODY, {}).get(RAW, None)
             api.body = self.get_body(item.get(REQUEST).get(BODY))
 
         if api.body is not None and api.body.raw is not None:
@@ -241,15 +240,23 @@ class DocumentGenerator:
             api_example.url = res.get(ORIGINAL_REQUEST, {}).get(URL, {}).get(RAW, None)
             api_example.request_body = None
 
-            if api_example.url is not None:
-                api_example.request_body = '\n' + api_example.method + ' ' + api_example.url
+            if api_example.method is not None:
+                api_example.request_body = '\n' + api_example.method
+
+            if api_example.url is not None and api_example.request_body is not None:
+                api_example.request_body = api_example.request_body + ' ' + api_example.url
+
             if res.get(ORIGINAL_REQUEST, {}).get(BODY, None) is not None:
                 api_example.request_body = (api_example.request_body if api_example.request_body is not None else '') \
                     + '\n' + res.get(ORIGINAL_REQUEST).get(BODY).get(RAW, '')
 
-            api_example.status = res.get(STATUS)
-            api_example.code = res.get(CODE)
-            api_example.response_body = '\n' + res.get(BODY, '')
+            api_example.status = res.get(STATUS, None)
+            api_example.code = res.get(CODE, None)
+
+            api_example.response_body = res.get(BODY, None)
+            if api_example.response_body is not None:
+                api_example.response_body = '\n' + api_example.response_body
+
             examples.append(api_example)
 
         if len(examples) == 0:
