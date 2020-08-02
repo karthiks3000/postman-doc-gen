@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- using local links -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/sidebar-themes.css">
-    <link rel="stylesheet" href="css/bootstrap-treeview.css">
-    <link rel="stylesheet" href="css/postman.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/sidebar-themes.min.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="css/postman.min.css">
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
 
@@ -60,10 +60,17 @@
                     <div class="col-md-1">
                         <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a>
                     </div>
-                    <div class="col-md-8">
-
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2 text-left">
+                        {%- if download_enabled and collection.file_name is not none%}
+                            <a href="{{collection.file_name}}" class="btn btn-sm btn-primary btn-rounded" download>
+                                <i class="fas fa-download"></i> Collection</a>
+                        {% endif %}
+                        {%- if download_enabled and collection.env_file_name is not none%}
+                            <a href="{{collection.env_file_name}}" class="btn btn-sm btn-primary btn-rounded" download>
+                                <i class="fas fa-download"></i> Env</a>
+                        {% endif %}
                     </div>
-<!--                    <div class="col-md-3 text-left"> <a href="https://sharebootstrap.com/docu-free-bootstrap-4-documentation-theme/" class="btn btn-sm btn-primary btn-rounded">Free Download</a> </div>-->
                 </div>
                 <div class="row p-lg-4">
                     <article class="main-content col-md-12 pr-lg-9" id="doc-body">
@@ -242,8 +249,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/bootstrap-treeview.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bootstrap-treeview.min.js"></script>
+    <script src="js/main.min.js"></script>
     <script type="application/javascript">
         var data = {{ side_tree|safe }}
         $('#tree').treeview({

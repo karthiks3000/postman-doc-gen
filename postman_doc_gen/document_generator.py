@@ -2,6 +2,7 @@ import json
 import os
 from collections import OrderedDict
 from distutils.dir_util import copy_tree
+import shutil
 
 from fastjsonschema import validate
 from jinja2 import Environment, FileSystemLoader
@@ -21,7 +22,8 @@ class DocumentGenerator:
     def __init__(self):
         super().__init__()
 
-    def generate_doc(self, collection_file_name: object, environment_file_name: object = None, output_dir: object = None) -> object:
+    def generate_doc(self, collection_file_name: str, environment_file_name: str = None, output_dir: object = None,
+                     download_enabled: bool = False) -> object:
         """
         :param collection_file_name: [Required] postman collection json
         :param environment_file_name: [Optional] postman environment json
@@ -37,35 +39,52 @@ class DocumentGenerator:
         if environment_file_name is not None:
             self.env_file = self.get_json_file(environment_file_name)
 
-        self.api_collection = APICollectionModel()
-
-        self.api_collection.name = json_collection[INFO][NAME]
-        self.api_collection.description = json_collection[INFO].get(DESCRIPTION, '')
-        self.api_collection.schema = json_collection[INFO][SCHEMA]
-
-        self.side_tree = []
-        self.api_id_counter = 0
-        self.response_id = 0
-        self.add_items(self.side_tree, json_collection)
-
         if output_dir is None:
             output_dir = os.path.join(root, OUTPUT_DIR)
 
         filename = os.path.join(output_dir, OUTPUT_FILE_NAME)
         css_dir = os.path.join(root, TEMPLATES_DIR, CSS_DIR)
         js_dir = os.path.join(root, TEMPLATES_DIR, JS_DIR)
+        collection_destination = os.path.join(output_dir, os.path.basename(collection_file_name))
 
+        self.api_collection = APICollectionModel()
+
+        self.api_collection.name = json_collection[INFO][NAME]
+        self.api_collection.description = json_collection[INFO].get(DESCRIPTION, '')
+        self.api_collection.schema = json_collection[INFO][SCHEMA]
+        self.api_collection.file_name = os.path.basename(collection_file_name)
+
+        self.side_tree = []
+        self.api_id_counter = 0
+        self.response_id = 0
+        self.add_items(self.side_tree, json_collection)
+
+        if environment_file_name is not None and download_enabled:
+            self.api_collection.env_file_name = os.path.basename(environment_file_name)
+            env_destination = os.path.join(output_dir, os.path.basename(environment_file_name))
+            DocumentGenerator.copy_file(environment_file_name, env_destination)
+
+        if download_enabled:
+            DocumentGenerator.copy_file(collection_file_name, collection_destination)
         copy_tree(css_dir, os.path.join(output_dir, CSS_DIR))
         copy_tree(js_dir, os.path.join(output_dir, JS_DIR))
 
         with open(filename, 'w') as fh:
             fh.write(template.render(
+                download_enabled=download_enabled,
                 collection=self.api_collection,
                 side_tree=self.side_tree,
                 api_info=self.api_info
             ))
 
         return output_dir
+
+    @staticmethod
+    def copy_file(src, dest):
+        try:
+            shutil.copyfile(src, dest)
+        except shutil.SameFileError:
+            pass
 
     @staticmethod
     def get_template(templates_dir):

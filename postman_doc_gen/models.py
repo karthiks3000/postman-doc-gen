@@ -60,6 +60,8 @@ class APICollectionModel:
     name: str = None
     description: str = None
     schema: str = None
+    file_name: str = None
+    env_file_name: str = None
 
     def __init__(self):
         super().__init__()
