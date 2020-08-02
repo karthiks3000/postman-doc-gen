@@ -20,10 +20,19 @@ Generate HTML API documentation from a postman collection.
     ```
     ![Screenshot](./img/iTerm_3.png?raw=true "Title")
  
- - The output folder should now show 3 things -
+- To enable download links to the collection and environment files, use the following command - 
+    ```
+    ./postman_doc_gen [path/to/collection] -o [path/to/output/folder] -e [path/to/environment/json] -d true
+    ```
+    ![Screenshot](./img/iTerm_4.png?raw=true "Title")
+ 
+
+- The output folder should now show the following -
     1. index.html - this is the html documentation generated from the collection
     2. css - this is the css folder consisting of the necessary css files
     3. js - this is the javascript folder consisting of the required js files
+    4. collection json - if the download option was enabled, the collection json is also copied
+    5. environment json - if the download option was enabled and an env file provided, the env json is also copied
 
 
 ## To build locally
