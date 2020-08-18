@@ -81,7 +81,9 @@
                                         <p>{{collection.name}}</p>
                                     </div>
                                     <div class="collection-description">
-                                        <p>{{collection.description}}</p>
+<p>{% markdown %}
+{{collection.description|safe}}
+{% endmarkdown %}</p>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +104,9 @@
                                     {% endif %}
                                     {%- if api.description is defined and api.description is not none%}
                                     <div class="description request-description">
-                                        <p>{{api.description|safe}}</p>
+<p>{% markdown %}
+{{api.description|safe}}
+{% endmarkdown %}</p>
                                     </div>
                                     {% endif %}
 

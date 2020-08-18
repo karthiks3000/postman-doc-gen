@@ -20,5 +20,5 @@ setup(name='postman_doc_gen',
 
       zip_safe=False,
 
-      setup_requires=['fastjsonschema>=2.14', 'Jinja2>=2.11', 'MarkupSafe>=1.1'],
+      setup_requires=['fastjsonschema>=2.14', 'Jinja2>=2.11', 'MarkupSafe>=1.1', 'jinja_markdown>=1.200630'],
       python_requires='>=3.0')

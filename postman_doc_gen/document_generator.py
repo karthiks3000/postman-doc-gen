@@ -93,7 +93,7 @@ class DocumentGenerator:
         :param templates_dir: the directory containing the template
         :return: the JINJA 2 template
         """
-        env = Environment(loader=FileSystemLoader(templates_dir))
+        env = Environment(loader=FileSystemLoader(templates_dir), extensions=['jinja_markdown.MarkdownExtension'])
         return env.get_template(TEMPLATE_FILE_NAME)
 
     @staticmethod
