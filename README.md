@@ -38,6 +38,12 @@ Generate HTML API documentation from a postman collection.
 ## To build locally
 
 - Clone the repository
+- Download Python 3.7
+- Create a virtual env (recommended but optional)
+    ```
+    python -m venv venv
+    source ./venv/bin/activate
+    ```
 - pip install the dependencies from the requirements file 
     ```
     pip install -r requirements.txt

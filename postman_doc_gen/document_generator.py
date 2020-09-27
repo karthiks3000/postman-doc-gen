@@ -1,9 +1,10 @@
 import json
 import os
+import shutil
 from collections import OrderedDict
 from distutils.dir_util import copy_tree
-import shutil
 
+import bleach
 from fastjsonschema import validate
 from jinja2 import Environment, FileSystemLoader
 
@@ -216,6 +217,7 @@ class DocumentGenerator:
 
         if api.body is not None and api.body.raw is not None:
             api.body.raw = '\n' + api.body.raw.strip()  # append a line break for better formatting of jsons
+            api.body.raw = bleach.clean(api.body.raw)
 
         api.method = item.get(REQUEST, {}).get(METHOD, None)
 
@@ -269,13 +271,15 @@ class DocumentGenerator:
                 api_example.request_body = (api_example.request_body if api_example.request_body is not None else '') \
                     + '\n' + res.get(ORIGINAL_REQUEST).get(BODY).get(RAW, '')
 
+                api_example.request_body = bleach.clean(api_example.request_body)
+
             api_example.status = res.get(STATUS, None)
             api_example.code = res.get(CODE, None)
 
             api_example.response_body = res.get(BODY, None)
             if api_example.response_body is not None:
                 api_example.response_body = '\n' + api_example.response_body
-
+                api_example.response_body = bleach.clean(api_example.response_body)
             examples.append(api_example)
 
         if len(examples) == 0:

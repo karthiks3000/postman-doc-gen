@@ -11,7 +11,7 @@ def init_arg_parse() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "-v", "--version", action="version",
-        version=f"{parser.prog} Version 1.1.0"
+        version=f"{parser.prog} Version 1.1.1"
     )
     parser.add_argument('collection', help='The Postman collection json')
     parser.add_argument('-e', '--env', help='The Postman environment json')
