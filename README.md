@@ -73,5 +73,6 @@ The following tools/repos have been instrumental in building this tool
 - <a href="https://palletsprojects.com/p/jinja/">Jinja</a>
 - <a href="https://github.com/pyinstaller">PyInstaller</a>
 - <a href="https://giphy.com/apps/giphycapture">Giphy Capture</a>
+- <a href="https://pypi.org/project/bleach/">Bleach</a>
  
     
