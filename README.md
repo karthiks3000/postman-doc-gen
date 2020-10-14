@@ -1,5 +1,5 @@
 # postman-doc-gen
-Generate HTML API documentation from a postman collection.
+Generate HTML API documentation from a postman collection. You can use this tool to auto-generate the documentation and host it alongside your API's as detailed <a href="https://medium.com/@karthiks3000/hosting-api-documentation-with-postman-springboot-e3ac141a6663">here.</a>
 
 ## Usage
 
