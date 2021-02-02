@@ -1,5 +1,5 @@
 altgraph==0.17
-bleach==3.2.1
+bleach==3.3.0
 fastjsonschema==2.14.4
 importlib-metadata==2.0.0
 jinja-markdown==1.200630
