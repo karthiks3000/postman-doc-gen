@@ -3,7 +3,7 @@ bleach==3.2.1
 fastjsonschema==2.14.4
 importlib-metadata==2.0.0
 jinja-markdown==1.200630
-Jinja2==2.11.1
+Jinja2==2.11.3
 macholib==1.14
 Markdown==3.2.2
 MarkupSafe==1.1.1
