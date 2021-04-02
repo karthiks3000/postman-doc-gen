@@ -4,6 +4,8 @@ import shutil
 from collections import OrderedDict
 from distutils.dir_util import copy_tree
 
+import markdown
+
 import bleach
 from fastjsonschema import validate
 from jinja2 import Environment, FileSystemLoader
@@ -212,6 +214,8 @@ class DocumentGenerator:
         api.body = None
         if item.get(REQUEST, {}).get(DESCRIPTION, None) is not None:
             api.description = item.get(REQUEST, {}).get(DESCRIPTION, None)
+            api.description = self.markdown_to_html(api.description)
+
         if item.get(REQUEST, {}).get(BODY, None) is not None:
             api.body = self.get_body(item.get(REQUEST).get(BODY))
 
@@ -306,6 +310,18 @@ class DocumentGenerator:
             examples.append(api_example)
 
         return examples
+
+    @staticmethod
+    def markdown_to_html(md_text):
+        """
+        Converts the markdown text to html
+        :param md_text: the text with markdown
+        :return: the converted html code
+        """
+        return markdown.markdown(md_text, extensions=['extra', 'abbr', 'attr_list', 'def_list', 'fenced_code',
+                                                      'footnotes', 'md_in_html', 'tables', 'admonition', 'codehilite',
+                                                      'legacy_attrs', 'legacy_em', 'meta', 'nl2br', 'sane_lists',
+                                                      'smarty', 'toc', 'wikilinks'], output_format='html5')
 
     @staticmethod
     def get_body(body: json) -> APIBodyModel:
