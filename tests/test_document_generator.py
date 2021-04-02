@@ -357,7 +357,7 @@ class DocumentGeneratorTest(unittest.TestCase):
 
         self.assertEqual(1, api_model.id)
         self.assertEqual("Request 1", api_model.name)
-        self.assertEqual("Sample request description", api_model.description)
+        self.assertEqual("<p>Sample request description</p>", api_model.description)
         self.assertEqual(URL_ENCODED, api_model.body.mode)
         self.assertEqual("POST", api_model.method)
         self.assertEqual(1, len(api_model.headers))

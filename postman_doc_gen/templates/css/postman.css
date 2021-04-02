@@ -65,9 +65,35 @@ body #doc-body:not(.is-loading) {
     font-size: 14px;
 }
 
+.api-information .description table {
+    display: inline-block;
+    overflow-x: auto;
+    width: auto;
+    max-width: 100%;
+    border: thin solid #e6e6e6;
+}
+
+.api-information .description tr td, .api-information .description tr th {
+    padding-right: 1em;
+    border: thin solid #e6e6e6;
+}
+
+.api-information .description tr th {
+    padding-right: 1em;
+}
+
+table td, table th {
+    max-width: 100%;
+    padding: 5px 10px;
+    word-break: normal;
+    vertical-align: top;
+    white-space: pre-line;
+}
+
 .api-information .request-body {
     padding-top: 20px;
 }
+
 .api-information .request-body .body-heading {
     height: 24px;
     line-height: 24px;
