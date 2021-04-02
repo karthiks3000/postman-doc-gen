@@ -318,10 +318,19 @@ class DocumentGenerator:
         :param md_text: the text with markdown
         :return: the converted html code
         """
-        return markdown.markdown(md_text, extensions=['extra', 'abbr', 'attr_list', 'def_list', 'fenced_code',
-                                                      'footnotes', 'md_in_html', 'tables', 'admonition', 'codehilite',
-                                                      'legacy_attrs', 'legacy_em', 'meta', 'nl2br', 'sane_lists',
-                                                      'smarty', 'toc', 'wikilinks'], output_format='html5')
+        return markdown.markdown(md_text, extensions=['markdown.extensions.abbr',
+                                                      'markdown.extensions.attr_list', 'markdown.extensions.def_list',
+                                                      'markdown.extensions.fenced_code',
+                                                      'markdown.extensions.footnotes',
+                                                      'markdown.extensions.md_in_html', 'markdown.extensions.tables',
+                                                      'markdown.extensions.admonition',
+                                                      'markdown.extensions.codehilite',
+                                                      'markdown.extensions.legacy_attrs',
+                                                      'markdown.extensions.legacy_em',
+                                                      'markdown.extensions.meta', 'markdown.extensions.nl2br',
+                                                      'markdown.extensions.sane_lists', 'markdown.extensions.smarty',
+                                                      'markdown.extensions.toc', 'markdown.extensions.wikilinks'],
+                                 output_format='html5')
 
     @staticmethod
     def get_body(body: json) -> APIBodyModel:
