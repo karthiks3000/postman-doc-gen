@@ -263,7 +263,16 @@
             showMethod: true
         });
     </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/agate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>
+     document.querySelectorAll('code.is-highlighted').forEach(el => {
+      hljs.highlightAll(el);
+     });
+    </script>
+    <style>
+    .is-snippet-wrapper {background: #333 !important;}
+    </style>
 </body>
 
 </html>
