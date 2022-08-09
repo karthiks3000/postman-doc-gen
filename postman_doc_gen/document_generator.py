@@ -53,7 +53,7 @@ class DocumentGenerator:
         self.api_collection = APICollectionModel()
 
         self.api_collection.name = json_collection[INFO][NAME]
-        self.api_collection.description = json_collection[INFO].get(DESCRIPTION, '')
+        self.api_collection.description = self.markdown_to_html(json_collection[INFO].get(DESCRIPTION, ''))
         self.api_collection.schema = json_collection[INFO][SCHEMA]
         self.api_collection.file_name = os.path.basename(collection_file_name)
 
