@@ -54,8 +54,16 @@ Generate HTML API documentation from a postman collection. You can use this tool
     ```
 - to create a new executable 
     ```
-    pyinstaller -F postman_doc_gen.spec postman_doc_gen.py
+    pyinstaller postman_doc_gen.spec postman_doc_gen.py
     ```
+  Note: If you get the following error when running the pyinstaller command 
+  ```
+  OSError: Python library not found: libpython3.7.dylib, .Python, libpython3.7m.dylib, Python, Python3 
+  ```
+  then you need to re-install python on your machine with enable-shard & recreate the virtual environment
+  ```
+  env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.7.14 
+  ```
 
 ## Sample HTML Documentation
 

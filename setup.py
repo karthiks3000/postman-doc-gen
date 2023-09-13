@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(name='postman_doc_gen',
 
-      version='1.1.1',
+      version='1.1.2',
 
       url='https://github.com/karthiks3000/postman-doc-gen.git',
 
