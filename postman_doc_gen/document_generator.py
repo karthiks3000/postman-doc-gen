@@ -72,7 +72,7 @@ class DocumentGenerator:
         copy_tree(css_dir, os.path.join(output_dir, CSS_DIR))
         copy_tree(js_dir, os.path.join(output_dir, JS_DIR))
 
-        with open(filename, 'w') as fh:
+        with open(filename, 'w' , encoding='utf-8')  as fh:
             fh.write(template.render(
                 download_enabled=download_enabled,
                 collection=self.api_collection,
@@ -106,7 +106,7 @@ class DocumentGenerator:
         :param file_name: file path
         :return: the json file at path
         """
-        with open(file_name) as f:
+        with open(file_name, 'r', encoding='utf-8')  as f:
             json_file = json.load(f)
         return json_file
 
