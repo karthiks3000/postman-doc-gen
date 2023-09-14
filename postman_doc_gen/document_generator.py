@@ -186,6 +186,12 @@ class DocumentGenerator:
         for item in json_node['item']:
             if item.get('item', None) is not None:
                 node = dict()
+                
+                if item.get('description', None) is not None:
+                    self.api_id_counter = self.api_id_counter + 1
+                    node['href'] = '#' + str(self.api_id_counter)
+                    self.add_folders(item)
+                
                 node['text'] = item.get(NAME, NOT_FOUND)
                 sub_nodes = []
                 self.add_items(sub_nodes, item)
@@ -202,6 +208,19 @@ class DocumentGenerator:
                 node[METHOD] = item.get(REQUEST, {}).get(METHOD, 'None')
                 tree.append(node)
                 self.add_apis(item)
+
+    def add_folders(self, item:json):
+        """
+        Creates an APIModel and adds it to api_info
+        :param item: json node representing a folder
+        """
+        api = APIModel()
+        api.id = self.api_id_counter
+        api.name = self.markdown_to_html("###" + item.get(NAME, NOT_FOUND))
+        api.method = ''
+        api.description = item.get('description', None)
+        api.description = self.markdown_to_html(api.description)
+        self.api_info.append(api)
 
     def add_apis(self, item: json):
         """
